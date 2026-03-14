@@ -18,13 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // ダミーの開始値から目標値までカウントアップ
     animateValue(revenueElement, 1100000, 1240500, 2000);
 
-    // 将来的にはここでGitHub Pages上のJSONデータをフェッチし、
-    // エンジンの最新稼働状況を反映させる
-    /*
-    fetch('status.json')
-        .then(response => response.json())
-        .then(data => {
-            // UIを更新
-        });
-    */
+    // Live Activity Feed Logic
+    const feed = document.getElementById('activity-feed');
+    const activities = [
+        { text: "AI Hunter: Tokyo - Detected osteopathy clinic with review gap.", city: "Tokyo" },
+        { text: "AI Hunter: NY - Found luxury salon requiring 24/7 support.", city: "NY" },
+        { text: "AI Builder: Generating custom proposal for London law firm.", city: "London" },
+        { text: "SNS Sniper: Personalized DM sent to @famous_creator (JP).", city: "Tokyo" },
+        { text: "B2B Finder: High-value deal identified: 'Server Data Cleanup'.", city: "Global" },
+        { text: "AI Analysis: Competitor review patterns matched in 3 cities.", city: "Global" },
+        { text: "SNS Sniper: Bilingual response generated for NY client inquiry.", city: "NY" },
+        { text: "System: Auto-balancing worker nodes for optimal throughput.", city: "System" }
+    ];
+
+    function addActivity() {
+        const activity = activities[Math.floor(Math.random() * activities.length)];
+        const item = document.createElement('div');
+        item.className = 'activity-item';
+        
+        const now = new Date();
+        const timeStr = now.getHours().toString().padStart(2, '0') + ":" + 
+                        now.getMinutes().toString().padStart(2, '0') + ":" + 
+                        now.getSeconds().toString().padStart(2, '0');
+
+        item.innerHTML = `
+            <span><span style="color:var(--primary)">[${activity.city}]</span> ${activity.text}</span>
+            <span class="time">${timeStr}</span>
+        `;
+
+        feed.insertBefore(item, feed.firstChild);
+
+        if (feed.children.length > 4) {
+            feed.lastChild.style.animation = 'fadeOut 0.5s ease-out forwards';
+            setTimeout(() => {
+                if (feed.lastChild) feed.removeChild(feed.lastChild);
+            }, 500);
+        }
+    }
+
+    // Initial fill
+    for(let i=0; i<3; i++) {
+        setTimeout(addActivity, i * 1000);
+    }
+
+    // Continuous update
+    setInterval(addActivity, 4000);
 });
