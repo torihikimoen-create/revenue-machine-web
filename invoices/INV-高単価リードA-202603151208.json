@@ -1,0 +1,10 @@
+{
+    "invoice_id": "INV-高単価リードA-202603151208",
+    "client_id": "高単価リードA",
+    "amount": 500000,
+    "currency": "JPY",
+    "status": "OPEN",
+    "due_date": "月末締め翌月末払い",
+    "stripe_invoice_link": "https://dashboard.stripe.com/test/invoices/INV-高単価リードA-202603151208",
+    "issued_at": "2026-03-15T12:08:45.975331"
+}

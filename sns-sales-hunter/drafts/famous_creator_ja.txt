@@ -1,0 +1,4 @@
+--- Target: @famous_creator ---
+--- Issue: DM対応のパンク ---
+
+[Mock DM for @famous_creator] I noticed you are struggling with DM対応のパンク. We have an AI solution to help you.

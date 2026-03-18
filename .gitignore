@@ -1,0 +1,13 @@
+# 不要な大容量ファイルを除外
+.venv/
+__pycache__/
+*.webp
+*.png
+*.rar
+*.zip
+*.xlsx
+戦利品/
+整理済み_戦利品/
+.system_generated/
+browser/
+.env

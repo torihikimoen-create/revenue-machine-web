@@ -1,0 +1,15 @@
+[
+  {
+    "city": "奈良",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "TEST_Humanizer_Clinic",
+        "name": "テスト人間化クリニック",
+        "sector": "Nursing",
+        "email": "human-test@example.com",
+        "lang": "ja"
+      }
+    ]
+  }
+]

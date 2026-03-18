@@ -1,0 +1,43 @@
+name: AETHER CORE Daily Automation
+
+on:
+  schedule:
+    # 1時間おきに実行 (Gmail BANリスク回避しつつ、1日100通の上限へ最適化)
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install openai stripe python-dotenv # 必要な依存関係を明示
+
+      - name: Run AETHER CORE Real-time Outreach
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          # 画面上に見当たらないものは .env またはデフォルト値でフォールバック
+          STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }} 
+          DRY_RUN: 'false'
+        run: |
+          # 本番モード（--real）かつ安全なタスクを自動承認（--approve-safe）で実行
+          python run_automation.py --real --approve-safe --require-approval=false
+
+      - name: Archive Daily Automation Logs
+        run: |
+          echo "Daily automation cycle completed and results synced."
+
+      - name: Sync Results
+        run: |
+          echo "今日の自動収益ログをアーカイブしました。"

@@ -1,0 +1,49 @@
+name: Daily Business Automation
+
+on:
+  schedule:
+    - cron: '0 * * * *' # 1時間に1回実行し、各タイムゾーンの営業開始時間を狙い撃つ
+  workflow_dispatch: # 手動実行も可能にする
+
+permissions:
+  contents: write
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install openai stripe python-dotenv requests
+
+    - name: Run Automation Cycle
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+        SMTP_USER: ${{ secrets.SMTP_USER }}
+        SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        FROM_EMAIL: ${{ secrets.SMTP_USER }}
+        SENDER_MOCK_MODE: "false"
+        # 本番爆撃時は GitHub Secrets に DRY_RUN を追加し、値を "false" に設定すること
+        DRY_RUN: ${{ secrets.DRY_RUN }}
+      run: python run_automation.py
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Auto-update leads and drafts [skip ci]" || echo "No changes to commit"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

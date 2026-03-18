@@ -1,0 +1,26 @@
+{
+  "jp": {
+    "analysis": {
+      "sentiment_score": 0.3,
+      "detected_emotions": [
+        "frustration",
+        "confusion"
+      ],
+      "hidden_stress_point": "User spent 5 minutes in settings possibly without understanding or finding what they needed, leading to cancellation.",
+      "suggested_approach": "gentle"
+    },
+    "message": "佐藤様、\n\nこんにちは。まず初めに、私たちのサービスをお試しいただき、心より感謝申し上げます。設定画面でのご利用にあたって、何かご不明な点やご迷惑をおかけしていることがあれば、大変申し訳ございません。ご自身の目指されることに到達するために、思うように設定が進められないことはとてもストレスを感じられることと思います。\n\nもしご質問やお手伝いできることがありましたら、ぜひお気軽にお知らせください。私たちは、佐藤様が安心してサービスを利用できるよう、全力でサポートいたします。一緒に解決策を見つけていきましょう。\n\nどうぞよろしくお願いいたします。"
+  },
+  "en": {
+    "analysis": {
+      "sentiment_score": 0.3,
+      "detected_emotions": [
+        "frustration",
+        "impatience"
+      ],
+      "hidden_stress_point": "Waiting in queue for automation",
+      "suggested_approach": "gentle"
+    },
+    "message": "Dear Mr. Smith,\n\nI understand that waiting in the queue for automation can be frustrating and may lead to impatience. We appreciate your patience during this time. Our team is actively working to streamline the process and ensure that you receive the support you need promptly. \n\nIf there's anything specific you would like assistance with in the meantime, please feel free to reach out. Your satisfaction is our priority.\n\nBest regards,  \nAETHER CORE Customer Success Team"
+  }
+}

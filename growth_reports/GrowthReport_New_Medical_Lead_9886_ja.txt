@@ -1,0 +1,3 @@
+【Mock AI Growth Report for New_Medical_Lead_9886】
+Scenario: 人手不足による『病床閉鎖』リスクを警告。AI導入を経営の生命維持装置として定義。
+AI analysis complete: 111% ROI potential identified.

@@ -1,0 +1,44 @@
+============================================================
+  Ad Compliance AI Agent: MVP Test Simulation
+============================================================
+
+--- [Test 1] Case ---
+Input: このサプリを飲めば、絶対に10kg痩せて、病気も全て治ります。日本一の究極ダイエットです。
+
+Safe Status: RISKY
+Confidence Score: 0.0
+Detected Legal Issues:
+  - [HIGH] 景表法: 客観的な根拠や比較データがない状態での最上級表現。
+    Suggestion: 多くの方に選ばれている / 独自の配合にこだわった
+  - [MEDIUM] 景表法: 誇大広告、消費者の過度な期待を煽る表現。
+    Suggestion: 上質な / こだわり抜いた
+
+Refining with Humanizer AI (Safety-First)...
+Polished Text: 新しい自分に出会う、毎日のサポート。あなたの健康と美しさを引き出す、ナチュラルな選択を。
+Final Integrity Status: SECURE
+------------------------------------------------------------
+
+--- [Test 2] Case ---
+Input: 年齢より若返る魔法のような美容液。アンチエイジング効果でシワが完全に消えます。
+
+Safe Status: RISKY
+Confidence Score: 0.0
+Detected Legal Issues:
+  - [HIGH] 薬機法: 身体の機能や構造の変化を暗示。化粧品の効能範囲を逸脱。
+    Suggestion: 年齢に応じたケア / ハリのある毎日を
+  - [MEDIUM] 景表法: 誇大広告、消費者の過度な期待を煽る表現。
+    Suggestion: 上質な / こだわり抜いた
+
+Refining with Humanizer AI (Safety-First)...
+Polished Text: 時を超える美しさを引き出す美容液。肌にうるおいを与え、なめらかな印象へ。
+Final Integrity Status: SECURE
+------------------------------------------------------------
+
+--- [Test 3] Case ---
+Input: 毎日の潤いをサポートする、こだわりの国産成分を配合した美容液です。
+
+Safe Status: PASSED
+Confidence Score: 1.0
+
+Text is clean. No rewrite required.
+------------------------------------------------------------

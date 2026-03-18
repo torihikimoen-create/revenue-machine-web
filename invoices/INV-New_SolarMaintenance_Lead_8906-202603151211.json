@@ -1,0 +1,10 @@
+{
+    "invoice_id": "INV-New_SolarMaintenance_Lead_8906-202603151211",
+    "client_id": "New_SolarMaintenance_Lead_8906",
+    "amount": 150000,
+    "currency": "JPY",
+    "status": "OPEN",
+    "due_date": "月末締め翌月末払い",
+    "stripe_invoice_link": "https://dashboard.stripe.com/test/invoices/INV-New_SolarMaintenance_Lead_8906-202603151211",
+    "issued_at": "2026-03-15T12:11:44.092324"
+}

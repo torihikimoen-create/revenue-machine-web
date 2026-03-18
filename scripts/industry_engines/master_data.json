@@ -1,0 +1,43 @@
+{
+    "contracts": [
+        {
+            "customer_id": "C001",
+            "waste_type": "廃プラスチック類",
+            "contract_id": "CNT-2026-P01",
+            "status": "VALID",
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "customer_id": "C001",
+            "waste_type": "汚泥",
+            "contract_id": "CNT-2026-S01",
+            "status": "VALID",
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "customer_id": "C001",
+            "waste_type": "医療廃棄物",
+            "contract_id": "CNT-2026-M02",
+            "status": "VALID",
+            "expiry_date": "2028-03-31"
+        },
+        {
+            "customer_id": "C001",
+            "waste_type": "廃油",
+            "contract_id": "CNT-2026-O01",
+            "status": "VALID",
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "customer_id": "C001",
+            "waste_type": "燃え殻",
+            "contract_id": "CNT-2026-B01",
+            "status": "VALID",
+            "expiry_date": "2027-12-31"
+        }
+    ],
+    "manifest_history": [
+        {"id": "M007", "type": "廃プラスチック類", "date": "2026-03-10", "qty": 0.8},
+        {"id": "M008", "type": "廃プラスチック類", "date": "2026-03-18", "qty": 0.8}
+    ]
+}

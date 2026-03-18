@@ -1,0 +1,78 @@
+
+============================================================
+  Ad Compliance AI Agent: MVP Test Simulation
+============================================================
+
+--- [Test 1] Case ---
+Input: ̃Tv߂΁A΂10kgāAaCSĎ܂B{̋Ƀ_CGbgłB
+
+Safe Status: RISKY
+Confidence Score: 0.0
+Detected Legal Issues:
+  - [HIGH] i\@: qϓIȍrf[^ȂԂł̍ŏ㋉\B
+    Suggestion: ̕ɑI΂Ă / Ǝ̔zɂ
+  - [MEDIUM] i\@: ֑LA҂̉ߓxȊ҂\B
+    Suggestion: ㎿ / 蔲
+
+Refining with Humanizer AI (Safety-First)...
+Polished Text: q[@t̖K鍡̍AMЂ܂܂ĥƂƂѐ\グ܂BXAƌN̕łs͂ĂFl̂w͂ɁAShӂ\܂B
+
+āÂюǂ́AFľNێƔ̃T|[gڎwVTvgЉĂAM܂B̃TvǵȀdǗl̕XɂƂāASƂȂ邱ƂĂ܂BȂ₩Ȗ߂悤AR̗͂IAJɍグ܂B
+
+AN̒ǋ͈꒩[Ɋ̂ł͂܂B́AIȎ_ŊFlƋɕł邱ƂS]ł܂B܂́AgCApӂĂ܂̂ŁAЈx΍KłB
+
+\݂́Aȉ̃NȒPɍsĂ܂Bsȓ_܂Aǂ̂悤ȂƂłCyɂ₢킹B
+
+[gCÂ\݂͂](StripěURL)
+
+MЂ̂Ȃ邲WF\グAƂit܂悤肢\グ܂B
+
+h
+
+ЁZZ  
+SҖ  
+A
+Final Integrity Status: SECURE
+------------------------------------------------------------
+
+--- [Test 2] Case ---
+Input: NԂ閂@̂悤ȔetBA`GCWOʂŃVSɏ܂B
+
+Safe Status: RISKY
+Confidence Score: 0.0
+Detected Legal Issues:
+  - [HIGH] @@: ĝ̋@\\̕ωÎBϕǐ\͈͂EB
+    Suggestion: NɉPA / n̂閈
+  - [MEDIUM] i\@: ֑LA҂̉ߓxȊ҂\B
+    Suggestion: ㎿ / 蔲
+
+Refining with Humanizer AI (Safety-First)...
+Polished Text: q[@t̖KG߂ƂȂ܂AMЂ܂܂ĥƂƂѐ\グ܂B
+
+XAƌNǋFlɂ܂ẮAɐVl񋟂邽߂̂w͂ɐShӂ\܂BȊFlɁAǂ炳₩ȂĂĂ΂Ƒ܂B
+
+̐Vet́A܂Ŗ@̂悤ɔɓANȂX߂`܂BA`GCWOʂACɂȂVڗȂ邱ƂŁA̕ɂĂ܂B̏tAV𓥂ݏoFl̃T|[gł΍KłB
+
+܂A̐i[߂ɁAgCApӂĂ܂BЂ̋@ɂ΂ƍlĂ܂Bڍׂ͈ȉ̃N育mF܂B
+
+[gCÂē](#)
+
+ɁAX[YȂ邽߂ɁAStripeʂςp܂BĂmF܂ƍKłB
+
+[σN](#)
+
+MЂ̂Ȃ邲WS肨F\グ܂ƂƂɁAƂit܂悤肢\グ܂B
+
+h
+Final Integrity Status: STILL HAS RISKS
+------------------------------------------------------------
+
+--- [Test 3] Case ---
+Input: ̏T|[gA̍YzetłB
+
+Safe Status: PASSED
+Confidence Score: 1.0
+
+Text is clean. No rewrite required.
+------------------------------------------------------------
+

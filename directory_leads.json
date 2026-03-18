@@ -1,0 +1,42 @@
+[
+  {
+    "timestamp": "2026-03-17T08:08:09.259900",
+    "company_name": "エコ・サイクル株式会社",
+    "address": "東京都江東区...",
+    "contact": "03-xxxx-xxxx",
+    "url": "http://eco-cycle-example.jp",
+    "sector": "WasteManagement",
+    "scout_method": "DirectoryScraping",
+    "status": "NEW"
+  },
+  {
+    "timestamp": "2026-03-17T08:08:09.259900",
+    "company_name": "クリーン・フューチャー",
+    "address": "大阪府堺市...",
+    "contact": "06-xxxx-xxxx",
+    "url": "http://clean-future-example.com",
+    "sector": "WasteManagement",
+    "scout_method": "DirectoryScraping",
+    "status": "NEW"
+  },
+  {
+    "timestamp": "2026-03-17T08:08:09.261267",
+    "company_name": "さくら介護センター",
+    "address": "神奈川県横浜市...",
+    "contact": "045-xxxx-xxxx",
+    "url": "http://sakura-care-example.org",
+    "sector": "CareFacilities",
+    "scout_method": "DirectoryScraping",
+    "status": "NEW"
+  },
+  {
+    "timestamp": "2026-03-17T08:08:09.261267",
+    "company_name": "ひまわり高齢者住宅",
+    "address": "愛知県名古屋市...",
+    "contact": "052-xxxx-xxxx",
+    "url": "http://himawari-senior.example.net",
+    "sector": "CareFacilities",
+    "scout_method": "DirectoryScraping",
+    "status": "NEW"
+  }
+]

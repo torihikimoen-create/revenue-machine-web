@@ -1,0 +1,10 @@
+# 店舗ごとの設定テンプレート
+shops:
+  - id: "shop_001"
+    name: "プレミアム・ダイニング東京"
+    tone: "上品・丁寧"
+    auto_approve: true # 4つ星以上は自動投稿
+  - id: "shop_002"
+    name: "カジュアルカフェ・シブヤ"
+    tone: "フレンドリー"
+    auto_approve: false # 全て要確認

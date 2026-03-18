@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success | AETHER CORE Business Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="assets/branding/icon.png?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            animation: bounceIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .status-card {
+            max-width: 600px;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        @keyframes bounceIn {
+            from { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            to { transform: scale(1); }
+        }
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            position: absolute;
+            top: -10px;
+            z-index: 10;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-blur"></div>
+    
+    <main class="success-container">
+        <div class="success-icon">✅</div>
+        <h1 class="glitch-text">Deployment Initiated</h1>
+        <p class="subtitle">決済の完了を確認しました。AETHER CORE の自律稼働エンジンがあなたのビジネス領域の走査を開始します。</p>
+        
+        <div class="status-card glass">
+            <h3 style="color: var(--primary); margin-bottom: 15px;">System Synchronization</h3>
+            <p id="sync-msg">決済セッションを照合中...</p>
+            <div class="loading-spinner" id="sync-spinner" style="margin-top: 20px;"></div>
+            <p style="font-size: 0.8rem; opacity: 0.5; margin-top: 20px;" id="session-display">Session: Verifying...</p>
+        </div>
+
+        <div class="cta-buttons" style="margin-top: 3rem;">
+            <a href="index.html" class="btn secondary">Return to Dashboard</a>
+        </div>
+    </main>
+
+    <script>
+        // URLパラメータの取得
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        if (sessionId) {
+            document.getElementById('session-display').textContent = `Session: ${sessionId}`;
+            // 演出として数秒後にメッセージを変更
+            setTimeout(() => {
+                document.getElementById('sync-spinner').style.display = 'none';
+                document.getElementById('sync-msg').innerHTML = '<span style="color: #00ff88;">✓ エンジンの紐付けが完了しました</span><br>運用レポートは登録メールアドレスへ送信されます。';
+            }, 2500);
+        } else {
+            document.getElementById('sync-spinner').style.display = 'none';
+            document.getElementById('sync-msg').textContent = 'ダッシュボードへの接続準備が整いました。';
+        }
+
+        // 簡易的な紙吹雪の演出
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.opacity = Math.random();
+                confetti.style.backgroundColor = Math.random() > 0.5 ? '#00f2ff' : '#7000ff';
+                document.body.appendChild(confetti);
+            }
+        }
+        createConfetti();
+    </script>
+</body>
+</html>

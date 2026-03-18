@@ -1,0 +1,69 @@
+{
+    "crisis_scenarios": {
+        "IndWaste": "マニフェスト管理不備による『5年以下の懲役または1,000万円以下の罰金』および『産業廃棄物収集運搬業の許可取消』。一度のミスが会社の即座の解体に繋がります。",
+        "Construction": "建設業法違反による『営業停止処分』。公共事業への出禁だけでなく、民間案件でも信頼が完全喪失し、協力会社が離散します。",
+        "Solar": "設備認定（FIT）の取消。売電収入がゼロになり、銀行融資の返済だけが残る致命的なキャッシュフローの破綻。",
+        "LocalGov": "住民訴訟と地方自治法違反による監査。首長の政治的生命の終焉と、行政組織としての信頼失墜。",
+        "Childcare": "安全管理・記録・報告体制の不備による監査指摘と、最悪の場合の運営停止リスク。日次ログの欠損が信用失墜に直結します。",
+        "FoodSafety": "衛生管理ログの不備による営業リスク。監査対応や格付けで不利になり、売上と信用が同時に毀損します。",
+        "AML_Prep": "AML/CTF対応の遅れによる監査コストの急増と、規制対応が必要な取引機会の喪失。"
+    },
+    "sector_insights_ja": {
+        "Nursing": "2026年6月の臨時報酬改定（処遇改善対象の全職種拡大）への対応と、生産性向上要件（デジタル化）の未達成による『報酬減算』を強調。AIを利益確保の要として提示。",
+        "Construction": "2024年の残業規制から2年経ち、2025年12月に全面施行された『改正建設業法』による著しく短い工期の禁止・労務費適正化への対応遅滞が、法執行の対象となるリスクを警告。",
+        "LocalGov": "2025年度末（2026年3月末）のシステム標準化期限とアナログ規制撤廃の完遂が求められる中、未完了業務をAIで即座に自動化し、住民サービスを維持する緊急性を提示。",
+        "ProfService": "AI不可避の時代の『専門職としての生存競争』を強調。AIを使わない士業は淘汰される現実を提示。",
+        "Medical": "2024年4月からの残業規制が定着し、蓄積した疲弊による『医師の離職・診療体制の縮小』が表面化した現状を指摘。AIを医療継続の生命維持装置として定義。",
+        "Dental": "人手不足と競合激化による『新規患者の取りこぼし』リスクを警告。AIによる24時間予約対応と口コミ管理が、地域の信頼を独占する鍵であると提示。",
+        "AgedCare": "2025年10月に施行された改正児童福祉法（虐待防止通報義務化）の運用が本格化する中、記録ログの不備が運営許可取消に直結するリスクを強調。AIによる常時監視が経営を守る唯一の手段と提示。",
+        "CSP": "金融庁の2024-2026年度AML行動計画の最終年度として、実効性検証の不備がライセンス剥奪に直結する『最後の猶予期間』であることを強調。",
+        "IndWaste": "2024年からの残業規制に加え、来年2027年4月に迫る『電子報告義務の詳細化』に向けた現時点での基盤構築の必要性を強烈に警告。",
+        "FireSafety": "消防法に基づく法定点検報告の漏れが、万が一の際の『莫大な損害賠償・刑事責任』に繋がる恐怖を強調。AIによる書類作成の自動完遂が、オーナーの重圧をゼロにすると約束。",
+        "VisaCompliance": "入管への四半期報告の遅滞が『特定技能認定の取消・雇用停止』という致命傷になるリスクを指摘。AIによる実務代行こそが、外国人財を安定的かつ合法に確保する鍵であると提示。",
+        "Maritime": "2024年4月からの残業規制適用から2年、船員不足による『航路廃止・事業停止』のリスクが現実化した現状を警告。AI自動化こそが海のインフラを維持する唯一の手段と定義。"
+    },
+    "sector_insights_en": {
+        "Nursing": "Focus on 'Margin Expansion' and 'Market Capture'. AI as the key to scaling care networks without increasing overhead.",
+        "Construction": "Emphasize 'Contract Velocity' and 'Competitive Bidding Power'. AI tools to win more high-margin projects by automating compliance.",
+        "LocalGov": "Position AI as 'Civic Innovation Excellence'. Automating legacy workflows to reroute budget to high-impact public projects.",
+        "ProfService": "Highlight 'Scalability' and 'Fee-to-Margin Optimization'. AI-driven document production to increase billable intake and market share.",
+        "Medical": "Focus on 'Optimized Throughput' and 'Elite Patient Experience'. AI-automated logistics to dominate the mid-tier medical market.",
+        "Dental": "Emphasize 'Practice Modernization' and 'Patient Re-engagement'. Using AI to automate the mundane and focus on high-value clinical work.",
+        "AgedCare": "Focus on 'Compliance-as-Service'. Automating the transition to rights-based care under the new Act to eliminate administrative burnout and ensure 100% audit readiness.",
+        "CSP": "Emphasize 'Liability Shield'. Professional-grade AML/CFT automation to ensure regulatory integrity and protect directors from personal liability.",
+        "Childcare": "Focus on 'Safety Automation'. 24/7 compliance monitoring under the 2025 reforms to protect children and licenses simultaneously.",
+        "FoodSafety": "Emphasize 'Grade-A Reliability'. Automated HACCP and Food Control Plans to guarantee compliance under FSSA 2025.",
+        "AML_Prep": "Focus on '2025 Readiness'. Building the compliance infrastructure today to dominate a more regulated market tomorrow."
+    },
+    "sender_names": {
+        "Medical": "2026年医療経営DX支援プロジェクト",
+        "Nursing": "介護施設・事務負担軽減コンサルティング",
+        "LocalGov": "自治体アナログ規制撤廃・AI実装事務局",
+        "ProfService": "専門業務AI化・高度化支援チーム",
+        "Construction": "建設DX・安全書類自動化推進センター",
+        "IndWaste": "産業廃棄物適正管理・AI自動化支援センター",
+        "FireSafety": "建物防災管理・法定報告AIサポート事務局",
+        "VisaCompliance": "外国人雇用・入管報告AI実務代行チーム",
+        "Maritime": "海事・内航海運コンプライアンス支援局",
+        "AgedCare": "高齢者施設・新法規制対応支援プロジェクト",
+        "Childcare": "保育施設・監査対策および安全管理事務局",
+        "FoodSafety": "食品衛生管理・HACCPデジタル化推進チーム",
+        "CSP": "企業サービスプロバイダー・AML/KYC自動化支援局",
+        "AML_Prep": "AML/CTF規制対応・次世代実務体制構築チーム"
+    },
+    "sector_email_subjects": {
+        "IndWaste": "【産廃実務】2027年の報告義務化を前に、今こそ事務作業を『丸投げ』でゼロにするご提案",
+        "FireSafety": "【消防点検】複雑な報告書の自動作成と、管理の重圧からの解放について",
+        "VisaCompliance": "【入管報告・特定技能】記載ミスや遅滞のリスクをAIで排除しませんか？",
+        "Maritime": "【船主・海運事務】煩雑な安全報告の自律化と、経営時間の確保について",
+        "Medical": "【医療DX】人手不足の中でも『質の高い対応』を継続するための事務代行案",
+        "Nursing": "【2026年改定】臨時報酬改定への対応と、全職種の処遇改善・現場負担軽減について",
+        "Construction": "【2026年版】改正建設業法の全面施行に伴う、適正工期確保と安全書類の完全自動化について",
+        "Dental": "【歯科経営】口コミ対応と予約管理の自動化による、地域No.1の信頼獲得案",
+        "AgedCare": "【厳罰化対応】虐待防止通報義務の運用本格化に伴う、ガバナンス報告の自動化について",
+        "Childcare": "【安全管理】事故防止の記録義務化への対応と、日次ログの自動整合による監査対策案",
+        "FoodSafety": "【HACCP/食品衛生】デジタルログの自動化による、監査『Aランク』維持のご提案",
+        "CSP": "【AML/KYC】規制強化に伴う顧客審査フローの自動化と、法的制裁リスクの遮断について",
+        "AML_Prep": "【AML/CTF対応】先行導入によるコンプライアンス体制の圧倒的強化について"
+    }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER CORE | 利用ガイド (Snap & Send)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        .guide-container { max-width: 800px; margin: 100px auto; padding: 40px; }
+        h1 { font-size: 2.5rem; margin-bottom: 30px; border-left: 5px solid var(--accent); padding-left: 20px; }
+        h2 { font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px; }
+        .step-box { background: rgba(255, 255, 255, 0.05); border-radius: 15px; padding: 30px; margin-bottom: 30px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .step-num { font-size: 1.2rem; font-weight: 800; color: var(--accent); margin-bottom: 10px; display: block; }
+        .highlight { color: #fff; font-weight: 700; background: rgba(0, 243, 255, 0.2); padding: 2px 5px; border-radius: 4px; }
+        .tips { background: rgba(255, 215, 0, 0.1); border: 1px dashed gold; padding: 20px; border-radius: 10px; margin-top: 20px; }
+        .qr-placeholder { text-align: center; margin: 30px 0; }
+        .qr-placeholder img { width: 200px; height: 200px; border: 5px solid white; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <div class="background-blur"></div>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="assets/branding/logo.png?v=3" alt="AETHER CORE Logo" class="nav-logo"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Top</a></li>
+                <li><a href="tokushoho.html">特定商取引法</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="guide-container glass">
+        <h1>AI 利用ガイド <small style="font-size: 1rem; opacity: 0.7;">- Snap & Send モデル -</small></h1>
+        <p>AETHER COREのAIは、あなたの「有能な部下」として働きます。難しい操作はいりません。メールを1通送るだけで仕事が終わる体験を、今日から始めてください。</p>
+
+        <section>
+            <h2>会社・チームで導入する手順</h2>
+            <div class="step-box" style="border-left: 5px solid #00f3ff;">
+                <h3>01. 代表者：QRコードを現場に共有</h3>
+                <p>ご契約後に発行される「専用QRコード」を、スタッフのLINEグループに転送するか、事務所の壁に掲示してください。</p>
+            </div>
+            <div class="step-box" style="border-left: 5px solid #00f3ff;">
+                <h3>02. 現場：困ったときに「パシャリ」</h3>
+                <p>現場スタッフは、PCを開く必要はありません。各自のスマホでQRを読み込み、日報や書類を撮って送るだけです。</p>
+            </div>
+            <div class="step-box" style="border-left: 5px solid #00f3ff;">
+                <h3>03. 経営：自動レポートで状況把握</h3>
+                <p>AIは現場からの依頼を処理すると同時に、一日の動きをまとめて代表者へ報告します。社長は「現場で何が起きているか」をリアルタイムで把握できます。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>使い方は3ステップ</h2>
+            
+            <div class="step-box">
+                <span class="step-num">Step 01</span>
+                <h3>書類をスマホで撮る</h3>
+                <p>手書きの日報、複雑な帳票、読みづらい役所の書類を、カメラでパシャッと撮ってください。</p>
+                <div class="tips">
+                    <strong>💡 撮るコツ：</strong>
+                    <ul>
+                        <li>影が入らない明るい場所で撮ると、AIの精度が劇的に上がります。</li>
+                        <li>文字が細かすぎる場合は「上半分」「下半分」と2枚に分けて送ってもOKです。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">Step 02</span>
+                <h3>AIに写真を送る</h3>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
+                    <!-- スマホ向け -->
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 10px;">
+                        <h4 style="margin-bottom: 10px; color: var(--accent);">📱 スマホで送る</h4>
+                        <p style="font-size: 0.9rem;">以下のQRをスキャンしてメールを起動してください。</p>
+                        <div class="qr-placeholder" style="margin: 15px 0;">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?data=mailto%3Aeliel8114%40gmail.com%3Fsubject%3D%25E3%2580%2590AETHER%2520CORE%25E3%2580%2591%25E6%25A5%25AD%25E5%258B%2599%25E4%25BE%259D%25E9%25A0%25BC%26body%3D%25E5%2586%2599%25E7%259C%259F%25E3%2582%2592%25E6%25B7%25BB%25E4%25BB%2598%25E3%2581%2597%25E3%2581%25A6%25E3%2581%259D%25E3%2581%25AE%25E3%2581%25BE%25E3%2581%25BE%25E9%2580%2581%25E4%25BF%25A1%25E3%2581%2597%25E3%2581%25A6%25E3%2581%258F%25E3%2581%25A0%25E3%2581%2595%25E3%2581%2584%25E3%2580%2582&size=150x150" alt="Submit QR Code" style="width: 150px; height: 150px;">
+                        </div>
+                    </div>
+                    
+                    <!-- PC向け -->
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 20px; border-radius: 10px;">
+                        <h4 style="margin-bottom: 10px; color: var(--accent);">💻 PCで送る</h4>
+                        <p style="font-size: 0.9rem;">スキャンデータ等を送る場合は、直接メールを作成してください。</p>
+                        <ul style="font-size: 0.85rem; margin-top: 15px; list-style: none; padding: 0;">
+                            <li style="margin-bottom: 8px;"><strong>宛先:</strong> <code class="highlight">eliel8114@gmail.com</code></li>
+                            <li style="margin-bottom: 8px;"><strong>件名:</strong> <code class="highlight">【AETHER CORE】業務依頼</code></li>
+                            <li><strong>添付:</strong> 解析したい画像やファイルを添付</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step-box">
+                <span class="step-num">Step 03</span>
+                <h3>完成品を保存・印刷する</h3>
+                <p>AIが作成したExcelファイルを、オフィスのPCの<span class="highlight">フォルダに保存</span>してください。実地監査などで紙の控えが必要な場合は、そのまま<span class="highlight">印刷して保管</span>するだけでOKです。AIが勝手にお客様のシステムを覗くことはありません。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>AIに任せて欲しいこと</h2>
+            <ul>
+                <li><span class="highlight">「日報の自動データ化」</span>：現場の紙を撮るだけで、きれいなExcelデータになります。</li>
+                <li><span class="highlight">「法令・ミスチェック」</span>：記入漏れや不備がないか、AIがあなたの会社の守護神として監査します。</li>
+                <li><span class="highlight">「管理業務の要約」</span>：大量の報告書から「今日、社長が知っておくべき1行」を抜き出します。</li>
+            </ul>
+        </section>
+
+        <section class="tips" style="border-color: rgba(0, 243, 255, 0.3); background: rgba(0, 243, 255, 0.05); margin-top: 50px;">
+            <h3>🔒 安心してお使いいただくために</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 15px;">私たちは、お客様の信頼を第一に考えています。</p>
+            <ul style="font-size: 0.9rem; line-height: 1.6;">
+                <li><strong>勝手にPCを操作しません</strong>：お客様のパソコンにログインしたり、画面を覗いたりすることは一切ありません。メールの送受信のみで完結する安全な仕組みです。</li>
+                <li><strong>データはお客様自身が管理</strong>：AIが勝手にフォルダへ書き込むことはありません。届いたファイルを「お客様自身の手で保存」していただくことで、管理権限を常に確保できます。</li>
+                <li><strong>徹底したプライバシー保護</strong>：お預かりした写真は処理が終わり次第、速やかに消去されます。情報漏洩のリスクを最小限に抑え、会社の機密を守ります。</li>
+            </ul>
+        </section>
+
+        <section class="tips" style="border-radius: 10px; border: 1px solid #ff4b2b; background: rgba(255, 75, 43, 0.1); margin-top: 30px;">
+            <h3 style="color: #ff4b2b;">⚠️ 免責事項：最終確認のお願い</h3>
+            <p style="font-size: 0.9rem; line-height: 1.6;">
+                本サービスはAI技術を利用した業務支援ツールです。AIの特性上、不正確な情報や誤った内容を生成する可能性があります。作成されたデータやアドバイスに基づき実務を遂行・提出される際は、<strong>必ずお客様ご自身で最終的な内容の確認</strong>を行ってください。本サービスを利用したことによって生じた不利益や損害について、当プロジェクトは一切の責任を負いかねます。
+            </p>
+            <p style="font-size: 0.85rem; line-height: 1.6; margin-top: 12px; opacity: 0.9;">
+                詳細は <a href="terms.html" style="color:#ff4b2b; text-decoration: underline;">利用規約（免責事項）</a> をご確認ください。
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 AETHER CORE. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

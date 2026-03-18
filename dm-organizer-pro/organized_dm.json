@@ -1,0 +1,32 @@
+[
+  {
+    "source": "Instagram",
+    "from": "tanaka_taro",
+    "content": "来週の予約について相談したいのですが、空きはありますか？",
+    "analysis": {
+      "priority": "High",
+      "label": "Business Inquiry",
+      "suggested_action": "Reply Immediately"
+    }
+  },
+  {
+    "source": "X",
+    "from": "crypto_bot",
+    "content": "【至急】最新の投資案件について詳しく教えます！URLをクリック...",
+    "analysis": {
+      "priority": "High",
+      "label": "Business Inquiry",
+      "suggested_action": "Reply Immediately"
+    }
+  },
+  {
+    "source": "LinkedIn",
+    "from": "hr_manager",
+    "content": "突然のご連絡失礼いたします。弊社の採用プロジェクトについて...",
+    "analysis": {
+      "priority": "Medium",
+      "label": "Partnership",
+      "suggested_action": "Later"
+    }
+  }
+]

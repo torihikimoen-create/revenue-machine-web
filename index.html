@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER CORE | Autonomous Business Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="assets/branding/icon.png?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blur"></div>
+    
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html" class="logo-text">AETHER <span>CORE</span></a>
+            </div>
+            <ul>
+                <li><a href="#features">Engines</a></li>
+                <li><a href="#global">Global</a></li>
+                <li><a href="#status">Live Status</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="glitch-text">Autonomous<br>Business Empire</h1>
+                <p class="subtitle">24時間365日、AIが「集客・営業・商談・実務」を完遂し、世界中から収益を釣り上げる。次世代の完全自律型ビジネスプラットフォーム。</p>
+                <div class="trial-badge">Now Offering: 10-Day Free Trial</div>
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn primary">Start Automating</a>
+                    <a href="#features" class="btn secondary">View Our Engines</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2 class="section-title">Quad-Core Engines</h2>
+            <div class="grid">
+                <div class="card glass">
+                    <div class="icon">⭐</div>
+                    <h3>Google Reviews Auto</h3>
+                    <p>日英米の市場トーンに最適化されたAIが、店舗の信頼性を自動で最大化します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="icon">🎯</div>
+                    <h3>SNS Sales Hunter</h3>
+                    <p>DMに溢れるインフルエンサーの課題をAIが検知。最適なソリューションを多言語で自動提案。</p>
+                </div>
+                <div class="card glass">
+                    <div class="icon">📂</div>
+                    <h3>File Cleanup Sage</h3>
+                    <p>数万件の非構造化データをAIが分析・命名・整理。業務効率を劇的に改善します。</p>
+                </div>
+                <div class="card glass">
+                    <div class="icon">💰</div>
+                    <h3>B2B Deal Finder</h3>
+                    <p>高単価なWeb案件・整理案件を自動で釣り上げ、説得力のある提案書をAIが自動生成。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ad-auditor">
+            <div class="container glass">
+                <h2 class="section-title">AI Ad Auditor <span class="badge">MVP Demo</span></h2>
+                <p class="subtitle">薬機法・景表法リスクを瞬時に検知し、安全で売れるコピーへリライトします。</p>
+                
+                <div class="auditor-grid">
+                    <div class="input-area">
+                        <label>広告コピーを入力してください</label>
+                        <textarea id="ad-input" placeholder="例：このサプリを飲めば絶対に10kg痩せます！"></textarea>
+                        <button id="diagnose-btn" class="btn primary" style="width: 100%; margin: 15px 0 0 0;">AI診断を開始</button>
+                    </div>
+                    
+                    <div class="result-area glass" id="ad-result">
+                        <div class="placeholder-text">
+                            診断を開始すると、ここに法的リスクの分析と改善案が表示されます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-subscription">
+            <div class="container glass">
+                <h2 class="section-title">なぜ「継続的なAI支援」が必要なのか</h2>
+                <div class="value-proposition">
+                    <div class="prop-item">
+                        <h4>1. 実行の自動化（ハンズオフ）</h4>
+                        <p>ChatGPTなどの「ツール」を持っていても、使う時間がなければ意味がありません。私たちのAIは、あなたが寝ている間も自動で状況を判断し、実務を完遂します。</p>
+                    </div>
+                    <div class="prop-item">
+                        <h4>2. プロンプト不要の運用</h4>
+                        <p>専門的な命令（プロンプト）の知識は不要です。業界ごとの最適解を学習済みのAIが、プロレベルのクオリティで成果を出し続けます。</p>
+                    </div>
+                    <div class="prop-item">
+                        <h4>3. 継続的なMEO最適化</h4>
+                        <p>一度きりの設定では順位は落ちます。AIが毎日「店番」をすることで、地域No.1の座を長期的に守り抜くことが可能です。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="status">
+            <div class="status-container glass">
+                <h2 class="section-title">Growth Performance</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="label">Projected Annual Revenue</span>
+                        <span class="value" id="stat-revenue">¥1,250,500</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Operational Hubs</span>
+                        <span class="value">Tokyo / NY / London / <span class="blink">Singapore</span></span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Validated AI Agents</span>
+                        <span class="value">24 Units</span>
+                    </div>
+                </div>
+                
+                <div class="activity-feed-wrapper">
+                    <div class="feed-header">
+                        <span class="dot green blink"></span> LIVE SYSTEM MONITOR
+                    </div>
+                    <div id="activity-feed" class="activity-feed">
+                        <!-- Activities will be injected here by app.js -->
+                    </div>
+                </div>
+                
+                <div class="live-indicator">
+                    System-ready for high-scale business automation.
+                </div>
+
+                <div class="quick-feedback">
+                    <p>AIの活動はどうでしたか？ (Quick Feedback)</p>
+                    <div class="feedback-buttons">
+                        <button class="fb-btn" id="fb-up" title="良いね！">👍</button>
+                        <button class="fb-btn" id="fb-down" title="改善の余地あり">👎</button>
+                        <button class="fb-btn" id="fb-idea" title="アイデアがある">💡</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="global">
+            <h2 class="section-title">Global Reach</h2>
+            <div class="map-placeholder glass">
+                <p>Establishing presence in Tokyo, New York, London, and expanding to Singapore/Sydney.</p>
+                <div class="location-markers">
+                    <div class="marker tokyo">●</div>
+                    <div class="marker ny">●</div>
+                    <div class="marker london">●</div>
+                    <div class="marker sg">●</div>
+                </div>
+            </div>
+        </section>
+        <section id="pricing">
+            <h2 class="section-title">Pricing Plans</h2>
+            <div class="grid single-plan">
+                <div class="card glass highlight">
+                    <div class="card-badge">Most Popular</div>
+                    <h3>Standard Operation</h3>
+                    <div class="price">¥24,800<span>〜 / month (tax inc.)</span></div>
+                    <p style="font-size: 0.8rem; margin-top: -10px; opacity: 0.8;">※業界・業務量により異なります（建設・産廃・医療等 ¥33,000〜）</p>
+                    <ul>
+                        <li><span class="check">✔</span> Daily Auto-Discovery</li>
+                        <li><span class="check">✔</span> AI Report Generation</li>
+                        <li><span class="check">✔</span> Snap & Send Mobile Flow</li>
+                        <li><span class="check">✔</span> Priority Email Support</li>
+                    </ul>
+                    <a href="mailto:torihikimoen@gmail.com?subject=AETHER CORE Standard Operation Application" class="btn primary" style="width:100%; margin-top:15px; text-align:center;">Join 10-Day Trial</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; opacity: 0.7;">※詳細なカスタマイズおよび大規模構成についてはお問い合わせください。</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo-text small">AETHER <span>CORE</span></div>
+                <p>© 2026 AETHER CORE. All rights reserved.</p>
+            </div>
+            <div class="footer-section">
+                <p><a href="terms.html">利用規約</a> | <a href="privacy.html">プライバシーポリシー</a> | <a href="tokushoho.html">特定商取引法に基づく表記</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

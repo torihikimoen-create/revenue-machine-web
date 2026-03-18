@@ -1,0 +1,66 @@
+{
+    "report_type": "産業廃棄物管理票交付状況報告書",
+    "period": "2025年度",
+    "summary": {
+        "total_count": 6,
+        "total_quantity": 1204.8,
+        "unit": "t"
+    },
+    "details": [
+        {
+            "manifest_id": "M001",
+            "waste_type": "廃プラスチック類",
+            "quantity": 1.2,
+            "unit": "t",
+            "issued_date": "2026-03-15",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "manifest_id": "M002",
+            "waste_type": "廃酸",
+            "quantity": 0.5,
+            "unit": "t",
+            "issued_date": "2026-03-15",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "manifest_id": "M003",
+            "waste_type": "燃え殻",
+            "quantity": 2.0,
+            "unit": "t",
+            "issued_date": "2026-03-16",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "manifest_id": "M007",
+            "waste_type": "謎の物体",
+            "quantity": 0.3,
+            "unit": "t",
+            "issued_date": "2026-03-18",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "manifest_id": "M007",
+            "waste_type": "廃プラスチック類",
+            "quantity": 0.8,
+            "unit": "t",
+            "issued_date": "2026-03-18",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        },
+        {
+            "manifest_id": "M009",
+            "waste_type": "廃アルカリ",
+            "quantity": 1200.0,
+            "unit": "t",
+            "issued_date": "2026-03-18",
+            "contract_exists": true,
+            "expiry_date": "2027-12-31"
+        }
+    ],
+    "generated_at": "2026-03-18T10:19:40.233456"
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER CORE | Command HUD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00f2ff;
+            --secondary: #0066ff;
+            --bg: #0a0b10;
+            --surface: rgba(255, 255, 255, 0.05);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #e0e0e0;
+            --success: #00ff88;
+            --warning: #ffcc00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Rajdhani', sans-serif;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 242, 255, 0.05) 0%, transparent 70%),
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 100%, 100% 2px, 3px 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            grid-template-rows: 80px 1fr 200px;
+            height: 100vh;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Glassmorphism Header */
+        header {
+            grid-column: 1 / -1;
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+
+        .system-status {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            box-shadow: 0 0 10px var(--success);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Sidebar Stats */
+        .sidebar {
+            grid-row: 2 / 4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .card .value {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .card .trend {
+            font-size: 12px;
+            margin-top: 5px;
+            color: var(--success);
+        }
+
+        /* Main Viewport */
+        main {
+            grid-column: 2;
+            grid-row: 2;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .viewport-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .feed-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .feed-item {
+            background: rgba(255,255,255,0.03);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--secondary);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Console */
+        .console {
+            grid-column: 2;
+            grid-row: 3;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 13px;
+            color: var(--success);
+            overflow: hidden;
+        }
+
+        /* Right Panel */
+        .right-panel {
+            grid-column: 3;
+            grid-row: 2 / 4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .active-sectors {
+            flex: 1;
+        }
+
+        .sector-tag {
+            padding: 10px;
+            background: rgba(0, 242, 255, 0.1);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">AETHER CORE v5.0</div>
+            <div class="system-status">
+                <div class="status-tag"><div class="dot"></div> ENGINE ONLINE</div>
+                <div class="status-tag">SECURE NETWORK: OK</div>
+                <div class="status-tag">UPTIME: 342:12:05</div>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            <div class="card">
+                <h3>DAILY REVENUE</h3>
+                <div class="value">¥42,500</div>
+                <div class="trend">+12.5% from yesterday</div>
+            </div>
+            <div class="card">
+                <h3>SNIPER EFFICIENCY</h3>
+                <div class="value">94.2%</div>
+                <div class="trend">Optimization: MAX</div>
+            </div>
+            <div class="card">
+                <h3>CONVERSION RATE</h3>
+                <div class="value">8.4%</div>
+                <div class="trend">Leading Market: LocalGov</div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="map-overlay"></div>
+            <div class="viewport-header">
+                <h2>REAL-TIME OPERATIONS FEED</h2>
+                <div>MODE: AUTONOMOUS SCALING</div>
+            </div>
+            <div class="feed-container" id="feed">
+                <div class="feed-item">
+                    [08:04:12] DISCOVERED: New Opportunity in 'CareGiverVisa' sector. Signals match criteria.
+                </div>
+                <div class="feed-item">
+                    [07:58:33] SENT: Personalized proposal to Law Firm in London (Aria Grace Law).
+                </div>
+                <div class="feed-item">
+                    [07:50:01] ANALYZED: Market trend 'WasteManagement' manifesting High Severity signal.
+                </div>
+            </div>
+        </main>
+
+        <section class="console">
+            <div>> aether_core --status check</div>
+            <div>> System integrity verified.</div>
+            <div>> Core AI load: 12%</div>
+            <div>> Waiting for human approval on 35 pending tasks...</div>
+        </section>
+
+        <aside class="right-panel">
+            <div class="card active-sectors">
+                <h3>ACTIVE SECTORS</h3>
+                <div class="sector-tag"><span>LocalGov</span> <span>ACTIVE</span></div>
+                <div class="sector-tag"><span>WasteMgmt</span> <span>ACTIVE</span></div>
+                <div class="sector-tag"><span>CareGiver</span> <span>PENDING</span></div>
+                <div class="sector-tag"><span>SolarMaint</span> <span>SCOUTING</span></div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Simulate real-time updates
+        const feed = document.getElementById('feed');
+        setInterval(() => {
+            const time = new Date().toLocaleTimeString();
+            const items = [
+                `[${time}] SCANNED: 154 targets in Tokyo. 3 potential leads detected.`,
+                `[${time}] UPDATE: Approval queue updated with 1 new task.`,
+                `[${time}] MONITOR: Stripe verification status: PENDING_REVIEW.`
+            ];
+            const div = document.createElement('div');
+            div.className = 'feed-item';
+            div.textContent = items[Math.floor(Math.random() * items.length)];
+            feed.prepend(div);
+            if (feed.children.length > 10) feed.removeChild(feed.lastChild);
+        }, 8000);
+    </script>
+</body>
+</html>

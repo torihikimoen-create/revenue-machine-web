@@ -1,0 +1,42 @@
+{
+  "ng_patterns": [
+    {
+      "pattern": "絶対(に)?(治る|なおる|消える|消失)",
+      "is_regex": true,
+      "severity": "CRITICAL",
+      "law": "薬機法/景表法",
+      "reason": "医薬品的な効能効果の不当な保証、および優良誤認。",
+      "suggestion": "健康維持をサポートする / 気になる部分に寄り添う"
+    },
+    {
+      "pattern": "(若返る|アンチエイジング|再生する)",
+      "is_regex": true,
+      "severity": "HIGH",
+      "law": "薬機法",
+      "reason": "身体の機能や構造の変化を暗示。化粧品の効能範囲を逸脱。",
+      "suggestion": "年齢に応じたケア / ハリのある毎日を"
+    },
+    {
+      "pattern": "日本一|世界一|最高峰",
+      "is_regex": true,
+      "severity": "HIGH",
+      "law": "景表法",
+      "reason": "客観的な根拠や比較データがない状態での最上級表現。",
+      "suggestion": "多くの方に選ばれている / 独自の配合にこだわった"
+    },
+    {
+      "pattern": "(最高級|究極|神|魔法)",
+      "is_regex": true,
+      "severity": "MEDIUM",
+      "law": "景表法",
+      "reason": "誇大広告、消費者の過度な期待を煽る表現。",
+      "suggestion": "上質な / こだわり抜いた"
+    }
+  ],
+  "safe_phrases": [
+    "潤いを与える",
+    "キメを整える",
+    "乾燥を防ぐ",
+    "栄養補給"
+  ]
+}
