@@ -2214,42 +2214,5 @@
         "status": "PENDING",
         "timestamp": "2026-03-18T12:04:51.036192",
         "executed_at": null
-    },
-    {
-        "task_id": "TASK_20260318_164141_SYSTE",
-        "client_id": "SYSTEM_SCOUT",
-        "sector": "MARKET_RESEARCH",
-        "action_type": "MarketExpansion",
-        "content": "【新市場提案】SolarMaintenanceセクターへの緊急参入プロトコル\n概要: 太陽光発電設備の定期点検報告義務の強化（改正再エネ特措法）\n期待収益: High (月額サブスクリプション + 初回セットアップ費用)",
-        "metadata": {},
-        "consensus": {
-            "summary": "REJECTED",
-            "opinions": [
-                {
-                    "expert": "Legal Counsel",
-                    "status": "REJECTED",
-                    "message": "【鉄壁ガードレール：強制リジェクト】以下の法的リスク/不備を検知しました:\n\n提案内容に関する法的根拠や具体的な法令の引用が不足しているため、法的不備が存在する。"
-                },
-                {
-                    "expert": "Brand Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入はビジネスの成長に寄与し、持続可能なエネルギーの普及にも貢献するため。"
-                },
-                {
-                    "expert": "Operations Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入は、法改正に伴う需要の増加を見込めるため、実用的な提案と判断される。"
-                }
-            ],
-            "fact_checks": {
-                "verified": true,
-                "claims_detected": [],
-                "violations": [],
-                "risk_level": "NORMAL"
-            }
-        },
-        "status": "PENDING",
-        "timestamp": "2026-03-18T16:41:41.291764",
-        "executed_at": null
     }
 ]
