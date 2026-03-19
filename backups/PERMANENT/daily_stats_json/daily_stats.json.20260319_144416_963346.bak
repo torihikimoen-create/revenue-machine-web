@@ -1,0 +1,165 @@
+{
+  "2026-03-16": {
+    "date": "2026-03-16",
+    "sector_stats": {
+      "null": {
+        "proposals_sent": 0,
+        "trials_offered": 0
+      },
+      "Nursing": {
+        "proposals_sent": 16,
+        "trials_offered": 0
+      },
+      "Construction": {
+        "proposals_sent": 17,
+        "trials_offered": 0
+      },
+      "ProfService": {
+        "proposals_sent": 18,
+        "trials_offered": 0
+      },
+      "Dental": {
+        "proposals_sent": 8,
+        "trials_offered": 0
+      },
+      "FireSafety": {
+        "proposals_sent": 14,
+        "trials_offered": 0
+      },
+      "LocalGov": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "Medical": {
+        "proposals_sent": 18,
+        "trials_offered": 0
+      },
+      "AgedCare": {
+        "proposals_sent": 4,
+        "trials_offered": 0
+      },
+      "Maritime": {
+        "proposals_sent": 14,
+        "trials_offered": 0
+      },
+      "IndWaste": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "CSP": {
+        "proposals_sent": 4,
+        "trials_offered": 0
+      },
+      "FoodSafety": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      },
+      "VisaCompliance": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "AML_Prep": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      },
+      "Childcare": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      }
+    },
+    "total_proposals_sent": 0
+  },
+  "2026-03-17": {
+    "total_proposals_sent": 0,
+    "trials_offered": 0,
+    "date": "2026-03-17",
+    "sector_stats": {
+      "null": {
+        "proposals_sent": 0,
+        "trials_offered": 0
+      },
+      "Nursing": {
+        "proposals_sent": 16,
+        "trials_offered": 0
+      },
+      "Construction": {
+        "proposals_sent": 17,
+        "trials_offered": 0
+      },
+      "ProfService": {
+        "proposals_sent": 18,
+        "trials_offered": 0
+      },
+      "Dental": {
+        "proposals_sent": 8,
+        "trials_offered": 0
+      },
+      "FireSafety": {
+        "proposals_sent": 14,
+        "trials_offered": 0
+      },
+      "LocalGov": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "Medical": {
+        "proposals_sent": 18,
+        "trials_offered": 0
+      },
+      "AgedCare": {
+        "proposals_sent": 4,
+        "trials_offered": 0
+      },
+      "Maritime": {
+        "proposals_sent": 14,
+        "trials_offered": 0
+      },
+      "IndWaste": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "CSP": {
+        "proposals_sent": 4,
+        "trials_offered": 0
+      },
+      "FoodSafety": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      },
+      "VisaCompliance": {
+        "proposals_sent": 15,
+        "trials_offered": 0
+      },
+      "AML_Prep": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      },
+      "Childcare": {
+        "proposals_sent": 2,
+        "trials_offered": 0
+      }
+    }
+  },
+  "2026-03-18": {
+    "total_proposals_sent": 0,
+    "trials_offered": 0,
+    "date": "2026-03-18",
+    "sector_stats": {
+      "Nursing": {
+        "proposals_sent": 1,
+        "trials_offered": 0
+      }
+    }
+  },
+  "2026-03-19": {
+    "total_proposals_sent": 0,
+    "trials_offered": 0,
+    "date": "2026-03-19",
+    "sector_stats": {
+      "Nursing": {
+        "proposals_sent": 1,
+        "trials_offered": 0
+      }
+    }
+  }
+}
