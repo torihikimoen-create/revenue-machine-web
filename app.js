@@ -302,6 +302,56 @@ document.addEventListener('DOMContentLoaded', () => {
                     const contentArea = document.querySelector('.dashboard-content');
                     const sidebarItems = document.querySelectorAll('.sidebar li');
                     
+                    const setupDashboardBehaviors = (viewName) => {
+                        // AI分析ボタンのセットアップ
+                        const dashDiagnoseBtn = document.getElementById('dash-diagnose-btn');
+                        const dashAdInput = document.getElementById('dash-ad-input');
+                        const adResult = document.getElementById('dash-ad-result');
+
+                        if (dashDiagnoseBtn && dashAdInput) {
+                            dashDiagnoseBtn.addEventListener('click', () => {
+                                const text = dashAdInput.value.trim();
+                                if (!text) return;
+                                adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">AI分析中...</p>`;
+                                dashDiagnoseBtn.disabled = true;
+                                setTimeout(() => {
+                                    const risky = ["絶対", "痩せ", "病気", "治わる", "魔法"];
+                                    const found = risky.filter(kw => text.includes(kw));
+                                    if (found.length > 0) {
+                                        adResult.innerHTML = `<div class="status-badge risky">⚠️ リスクあり</div><div class="polished-box"><h5>✨ リライト案</h5><p>${text.replace(/絶対|痩せ|魔法/g, "適正な")}...（AI調整済み）</p></div>`;
+                                    } else {
+                                        adResult.innerHTML = `<div class="status-badge safe">✅ 安全確認</div><p>法令遵守されています。</p>`;
+                                    }
+                                    dashDiagnoseBtn.disabled = false;
+                                }, 1500);
+                            });
+
+                            // ドラッグ＆ドロップのセットアップ
+                            dashAdInput.addEventListener('dragover', (e) => {
+                                e.preventDefault();
+                                dashAdInput.style.borderColor = 'var(--primary)';
+                                dashAdInput.style.background = 'rgba(0, 242, 255, 0.05)';
+                            });
+                            dashAdInput.addEventListener('dragleave', () => {
+                                dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
+                                dashAdInput.style.background = 'rgba(0,0,0,0.2)';
+                            });
+                            dashAdInput.addEventListener('drop', (e) => {
+                                e.preventDefault();
+                                dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
+                                dashAdInput.style.background = 'rgba(0,0,0,0.2)';
+                                const file = e.dataTransfer.files[0];
+                                if (file) {
+                                    const reader = new FileReader();
+                                    reader.onload = (ev) => { dashAdInput.value = ev.target.result; };
+                                    reader.readAsText(file);
+                                } else {
+                                    dashAdInput.value = e.dataTransfer.getData('text');
+                                }
+                            });
+                        }
+                    };
+
                     const views = {
                         '概要': `
                             <div class="welcome-header">
@@ -309,25 +359,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p>システムは正常に稼働しており、${new Date().toLocaleDateString()} の分析を開始しました。</p>
                             </div>
                             <div class="stats-grid">
-                                <div class="stat-card glass">
-                                    <span class="label">本日の監査件数</span>
-                                    <span class="value">128</span>
-                                </div>
-                                <div class="stat-card glass">
-                                    <span class="label">自動送信済み</span>
-                                    <span class="value">42</span>
-                                </div>
-                                <div class="stat-card glass">
-                                    <span class="label">AI稼働効率</span>
-                                    <span class="value">98.5%</span>
-                                </div>
+                                <div class="stat-card glass"><span class="label">監査件数</span><span class="value">128</span></div>
+                                <div class="stat-card glass"><span class="label">自動送信済み</span><span class="value">42</span></div>
+                                <div class="stat-card glass"><span class="label">AI稼働効率</span><span class="value">98.5%</span></div>
                             </div>
                             <div class="recent-activity glass">
                                 <h3>最近の自動処理</h3>
                                 <div class="activity-list">
-                                    <div class="activity-row"><span>・Googleマップ レビュー返信予約済み (3件)</span> <span class="time">10分前</span></div>
-                                    <div class="activity-row"><span>・中建審 労務費データ同期完了</span> <span class="time">25分前</span></div>
-                                    <div class="activity-row"><span>・提出用レポートの下書き作成完了</span> <span class="time">1時間前</span></div>
+                                    <div class="activity-row"><span>・Googleマップ 返信済み</span> <span class="time">10分前</span></div>
+                                    <div class="activity-row"><span>・中建審 データ同期完了</span> <span class="time">25分前</span></div>
                                 </div>
                             </div>
                         `,
@@ -336,107 +376,32 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <h1>📤 分析・送信（Analyse & Send）</h1>
                                 <p>AIが分析し、最適な内容で自動送信・提案を行うセクションです。</p>
                             </div>
-                            
                             <div class="glass" style="margin-bottom:2rem; padding:2rem !important;">
-                                <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--primary);">✨ AI分析・下書き生成（マニュアル実行）</h3>
-                                <p style="font-size:0.85rem; margin-bottom:1.5rem; opacity:0.7;">分析したい広告コピーや、顧客への提案骨子を入力してください。AIがリスクを診断し、最適な下書きを生成します。</p>
-                                <div class="input-area">
-                                    <textarea id="dash-ad-input" placeholder="例：今なら絶対痩せる！魔法のダイエットサプリ登場。" style="width:100%; height:80px; margin-bottom:15px;"></textarea>
-                                    <button id="dash-diagnose-btn" class="btn primary" style="width:100%; border:none; cursor:pointer;">AI分析・提案生成を実行</button>
-                                </div>
-                                <div id="dash-ad-result" style="margin-top:20px;"></div>
+                                <h3 style="margin-bottom:1rem; color:var(--primary);">✨ AI分析・下書き生成</h3>
+                                <p style="font-size:0.8rem; margin-bottom:1rem; opacity:0.7;">広告コピーの入力や、ファイルをここにドロップしてください。</p>
+                                <textarea id="dash-ad-input" placeholder="ここにテキストを入力するか、ファイルをドロップ（.txt/.md）"></textarea>
+                                <button id="dash-diagnose-btn" class="btn primary" style="width:100%; margin-top:1rem;">分析を実行</button>
+                                <div id="dash-ad-result" style="margin-top:1.5rem;"></div>
                             </div>
-
-                            <div class="recent-activity glass" style="padding:1.5rem !important;">
-                                <h3>送信・下書き履歴</h3>
+                            <div class="recent-activity glass">
+                                <h3>履歴</h3>
                                 <div class="activity-list">
-                                    <div class="activity-row"><span>📩 【自動送信済み】B2B商談提案 3件（建設コンサルタント宛）</span> <span class="time">30分前</span></div>
-                                    <div class="activity-row"><span>📝 【下書き作成】SNS返信案 5件（要承認あり）</span> <span class="time">1時間前</span></div>
+                                    <div class="activity-row"><span>📩 B2B提案送信済み</span> <span class="time">30分前</span></div>
                                 </div>
                             </div>
                         `,
                         '監査エンジン': `
-                            <div class="welcome-header">
-                                <h1>🤖 監査エンジン設定</h1>
-                                <p>稼働中のAIエージェントのステータスと、監視対象の設定を管理します。</p>
-                            </div>
-                            <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
-                                <div class="card glass" style="padding:1.5rem !important;">
-                                    <h3>建設業法 遵守監査</h3>
-                                    <p>・見積書の適正性一括チェック: <span style="color:#00ff88">稼働中</span></p>
-                                    <p>・契約書類の不備自動検知: <span style="color:#00ff88">稼働中</span></p>
-                                </div>
-                                <div class="card glass" style="padding:1.5rem !important;">
-                                    <h3>労務費基準 適合性監査</h3>
-                                    <p>・中央建設業審議会データ同期: <span style="color:#00ff88">最新</span></p>
-                                    <p>・下請契約の適正化モニタリング: <span style="color:#00ff88">稼働中</span></p>
-                                </div>
-                            </div>
+                            <div class="welcome-header"><h1>🤖 監査エンジン</h1><p>AIエージェントの稼働状況です。</p></div>
+                            <p class="glass" style="padding:2rem !important;">建設業法 遵守監査: <span style="color:#00ff88">稼働中</span></p>
                         `,
                         'ナレッジベース': `
-                            <div class="welcome-header">
-                                <h1>📂 ナレッジベース</h1>
-                                <p>AIが学習し、意思決定の根拠として使用するドキュメント一覧です。</p>
-                            </div>
-                            <div class="recent-activity glass" style="padding:1.5rem !important;">
-                                <div class="activity-list">
-                                    <div class="activity-row"><span>📄 2026年度 建設業振興指針 (PDF)</span> <span class="time">同期済み</span></div>
-                                    <div class="activity-row"><span>📄 北海道知事許可 独自解釈基準 (PDF)</span> <span class="time">同期済み</span></div>
-                                    <div class="activity-row"><span>📄 自社過去契約書テンプレート (Word)</span> <span class="time">5件</span></div>
-                                </div>
-                            </div>
+                            <div class="welcome-header"><h1>📂 ナレッジベース</h1><p>同期済みの法令データです。</p></div>
+                            <p class="glass" style="padding:2rem !important;">📄 建設業振興指針 (2026年度版)</p>
                         `,
                         '設定': `
-                            <div class="welcome-header">
-                                <h1>⚙️ システム設定</h1>
-                                <p>アカウント情報の変更や通知設定を行います。</p>
-                            </div>
-                            <div class="glass" style="padding:2rem !important;">
-                                <p><strong>基本プラン:</strong> スタンダード運用（10日間無料トライアル中）</p>
-                                <p><strong>メール通知:</strong> 有効</p>
-                                <p><strong>自動レポート送付日:</strong> 毎週月曜日 9:00</p>
-                                <button class="btn secondary" style="margin-top:20px; padding:0.5rem 1.5rem;">設定を保存する</button>
-                            </div>
+                            <div class="welcome-header"><h1>⚙️ 設定</h1><p>システム構成の管理</p></div>
+                            <div class="glass" style="padding:2rem !important;"><p>無料トライアル期間: あと9日</p></div>
                         `
-                    };
-
-                    const setupAnalyzeButton = () => {
-                        const dashDiagnoseBtn = document.getElementById('dash-diagnose-btn');
-                        if (dashDiagnoseBtn) {
-                            dashDiagnoseBtn.addEventListener('click', () => {
-                                const adInput = document.getElementById('dash-ad-input');
-                                const adResult = document.getElementById('dash-ad-result');
-                                const text = adInput.value.trim();
-                                if (!text) return;
-
-                                adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">AIが分析中...</p>`;
-                                dashDiagnoseBtn.disabled = true;
-
-                                setTimeout(() => {
-                                    const riskyKeywords = ["絶対", "痩せ", "病気", "治る", "若返る", "魔法", "シワ", "消え"];
-                                    const foundIssues = riskyKeywords.filter(kw => text.includes(kw));
-                                    
-                                    if (foundIssues.length > 0) {
-                                        let polished = "肌にうるおいを与え、ハリのある毎日を。年齢に応じたケアで自分らしい美しさを。";
-                                        adResult.innerHTML = `
-                                            <div class="status-badge risky" style="margin-bottom:15px; display:inline-block;">⚠️ リスク検知: 要修正</div>
-                                            <div class="polished-box" style="margin-top:0;">
-                                                <h5 style="color:var(--primary); margin-bottom:10px;">✨ AI安全リライト・提案書案</h5>
-                                                <div class="polished-text" style="font-size:0.95rem;">${polished}</div>
-                                                <button class="btn primary" style="margin-top:15px; font-size:0.8rem; padding:0.5rem 1rem;">この内容で送信/保存</button>
-                                            </div>
-                                        `;
-                                    } else {
-                                        adResult.innerHTML = `
-                                            <div class="status-badge safe" style="margin-bottom:15px; display:inline-block;">✅ 安全確認済み</div>
-                                            <p style="font-size:0.9rem;">この内容は法的リスクが低く、そのまま提案または送信可能です。</p>
-                                            <button class="btn primary" style="margin-top:15px; font-size:0.8rem; padding:0.5rem 1rem;">送信を実行する</button>
-                                        `;
-                                    }
-                                    dashDiagnoseBtn.disabled = false;
-                                }, 1500);
-                            });
-                        }
                     };
 
                     sidebarItems.forEach(item => {
@@ -445,9 +410,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             item.classList.add('active');
                             const viewName = item.innerText.replace(/^[^\s]+\s/, '');
                             contentArea.innerHTML = views[viewName] || views['概要'];
-                            if (viewName === '分析・送信') setupAnalyzeButton();
+                            setupDashboardBehaviors(viewName);
                         });
                     });
+
+                    // 初期状態のセットアップ
+                    setupDashboardBehaviors('概要');
                 };
 
                 attachDashboardListeners();
