@@ -318,26 +318,28 @@ document.addEventListener('DOMContentLoaded', () => {
                                     const isAdCopy = /絶対|痩せ|魔法|治る|若返る|シワ/i.test(text);
 
                                     if (isManifest) {
-                                        // 産業廃棄物マニフェストの監査
+                                        // 産業廃棄物・資源監査室による監査
                                         adResult.innerHTML = `
+                                            <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当部署: 産業廃棄物・資源監査室</div>
                                             <div class="status-badge risky" style="background:#ff4757;">⚠️ 監査アラート: 廃棄物処理法 抵触リスク</div>
                                             <div class="polished-box" style="border-left: 4px solid #ff4757;">
                                                 <h5 style="color:#ff4757; margin-bottom:8px;">📌 検出された不備 (EPA Code: F003/F005)</h5>
                                                 <p style="font-size:0.85rem; line-height:1.4;">「Spent Solvent/Sludge」の処理に関する委託契約書との不一致を検知しました。マニフェストNo.347891は、最終処分場への直接搬入として記載されていますが、許可品目に「引火性廃油」が含まれていない可能性があります。</p>
                                                 <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
-                                                    <strong>推奨アクション:</strong> 排出事業者および運搬業者への再確認、およびマニフェスト情報の修正を推奨します。
+                                                    <strong>専門官コメント:</strong> 処理工程(R5)における二次廃棄物の管理が不十分です。
                                                 </div>
                                             </div>
                                         `;
                                     } else if (isAdCopy) {
-                                        // 広告コピーの監査
+                                        // 広告・PR法務室による監査
                                         const risky = ["絶対", "痩せ", "魔法", "治る", "若返る", "シワ"];
                                         const found = risky.filter(kw => text.includes(kw));
                                         adResult.innerHTML = `
+                                            <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当部署: 広告・PR法務室</div>
                                             <div class="status-badge risky">⚠️ 薬機法・景表法リスクを検知</div>
                                             <div class="polished-box">
                                                 <h5 style="color:var(--primary); margin-bottom:8px;">✨ AI安全リライト提案</h5>
-                                                <div class="polished-text" style="font-size:0.9rem;">${text.replace(/絶対|痩せ|魔法/g, "理想のスタイルをサポートする")}... (リライト済み)</div>
+                                                <div class="polished-text" style="font-size:0.9rem;">${text.replace(/絶対|痩せ|魔法/g, "理想のスタイルをサポートする")}... (専門部署による調整済み)</div>
                                             </div>
                                         `;
                                     } else {
