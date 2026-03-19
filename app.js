@@ -222,23 +222,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 登録完了のシミュレーション
         setTimeout(() => {
-            signupModal.innerHTML = `
-                <div class="modal-content glass" style="text-align:center;">
-                    <div style="font-size: 4rem; margin-bottom: 20px;">📧</div>
-                    <h3 style="background:none; -webkit-text-fill-color: initial; color:var(--primary);">${userName}様、ありがとうございます</h3>
-                    <p>ご入力いただいたメールアドレスに、<br><strong>ログイン用IDと仮パスワード</strong>を送信いたしました。</p>
-                    <p style="font-size:0.8rem; margin-top:10px;">（※デモ環境のため、このままダッシュボードへ案内します）</p>
-                    <div class="loading-spinner"></div>
-                    <p style="color:var(--primary); font-weight:600;">System Initializing...</p>
-                </div>
-            `;
-            
             // 3秒後にダッシュボードへ遷移する体にする
             setTimeout(() => {
-                alert("ダッシュボードへ遷移します（モックアップ）");
-                location.reload(); // デモなのでリロード
-            }, 3000);
-        }, 2000);
+                // ダッシュボードUIの生成
+                document.body.innerHTML = `
+                    <div class="background-blur"></div>
+                    <header>
+                        <nav>
+                            <div class="logo"><a href="index.html" class="logo-text">AETHER <span>CORE</span></a></div>
+                            <div class="user-profile">
+                                <span>${userName} 様</span>
+                                <div class="avatar">👤</div>
+                            </div>
+                        </nav>
+                    </header>
+                    <main class="dashboard-main">
+                        <aside class="sidebar glass">
+                            <ul>
+                                <li class="active">📊 概要</li>
+                                <li>🤖 監査エンジン</li>
+                                <li>📂 ナレッジベース</li>
+                                <li>⚙️ 設定</li>
+                            </ul>
+                        </aside>
+                        <section class="dashboard-content">
+                            <div class="welcome-header">
+                                <h1>おかえりなさい、${userName}様</h1>
+                                <p>システムは正常に稼働しており、${new Date().toLocaleDateString()} の分析を開始しました。</p>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-card glass">
+                                    <span class="label">本日の監査件数</span>
+                                    <span class="value">128</span>
+                                </div>
+                                <div class="stat-card glass">
+                                    <span class="label">リスク検知数</span>
+                                    <span class="value">3</span>
+                                </div>
+                                <div class="stat-card glass">
+                                    <span class="label">AI稼働効率</span>
+                                    <span class="value">98.5%</span>
+                                </div>
+                            </div>
+                            <div class="recent-activity glass">
+                                <h3>最近の自動処理</h3>
+                                <div class="activity-list">
+                                    <div class="activity-row"><span>・Googleマップ レビュー返信予約済み (3件)</span> <span class="time">10分前</span></div>
+                                    <div class="activity-row"><span>・中建審 労務費データ同期完了</span> <span class="time">25分前</span></div>
+                                    <div class="activity-row"><span>・提出用レポートの下書き作成完了</span> <span class="time">1時間前</span></div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <style>
+                        .dashboard-main { display: flex; gap: 2rem; padding: 100px 5% 50px; min-height: 100vh; }
+                        .sidebar { width: 250px; padding: 2rem; height: fit-content; }
+                        .sidebar ul { list-style: none; }
+                        .sidebar li { padding: 12px 15px; margin-bottom: 5px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
+                        .sidebar li.active { background: var(--primary); color: var(--bg); font-weight: 700; }
+                        .sidebar li:hover:not(.active) { background: rgba(255,255,255,0.1); }
+                        .dashboard-content { flex: 1; }
+                        .welcome-header { margin-bottom: 2rem; }
+                        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+                        .stat-card { text-align: center; padding: 1.5rem !important; }
+                        .stat-card .label { display: block; font-size: 0.8rem; opacity: 0.6; margin-bottom: 0.5rem; }
+                        .stat-card .value { font-size: 2rem; font-weight: 700; color: var(--primary); }
+                        .recent-activity { padding: 2rem !important; }
+                        .activity-list { margin-top: 1.5rem; }
+                        .activity-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; }
+                        .user-profile { display: flex; align-items: center; gap: 10px; }
+                        .avatar { font-size: 1.5rem; }
+                    </style>
+                `;
+                window.scrollTo(0,0);
+            }, 2500);
+        }, 1500);
     });
 
     // Continuous update
