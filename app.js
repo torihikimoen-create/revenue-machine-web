@@ -313,12 +313,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 dashDiagnoseBtn.disabled = true;
 
                                 setTimeout(() => {
-                                    // コンテクスト判定
                                     const isManifest = /manifest|マニフェスト|EPA|F003|solvent|sludge/i.test(text);
                                     const isAdCopy = /絶対|痩せ|魔法|治る|若返る|シワ/i.test(text);
 
                                     if (isManifest) {
-                                        // 産業廃棄物・資源監査室による監査
                                         adResult.innerHTML = `
                                             <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当部署: 産業廃棄物・資源監査室</div>
                                             <div class="status-badge risky" style="background:#ff4757;">⚠️ 監査アラート: 廃棄物処理法 抵触リスク</div>
@@ -331,23 +329,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                             </div>
                                         `;
                                     } else if (isAdCopy) {
-                                        // 広告・PR法務室による監査
                                         const risky = ["絶対", "痩せ", "魔法", "治る", "若返る", "シワ"];
-                                        const found = risky.filter(kw => text.includes(kw));
                                         adResult.innerHTML = `
                                             <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当部署: 広告・PR法務室</div>
                                             <div class="status-badge risky">⚠️ 薬機法・景表法リスクを検知</div>
                                             <div class="polished-box">
                                                 <h5 style="color:var(--primary); margin-bottom:8px;">✨ AI安全リライト提案</h5>
-                                                <div class="polished-text" style="font-size:0.9rem;">${text.replace(/絶対|痩せ|魔法/g, "理想のスタイルをサポートする")}... (専門部署による調整済み)</div>
+                                                <div class="polished-text" style="font-size:0.9rem;">${text.replace(/絶対|痩せ|魔法|治る|若返る|シワ/g, "理想の成果を追求する")}... (専門部署による調整済み)</div>
                                             </div>
                                         `;
                                     } else {
-                                        // 一般的な文書
-                                        adResult.innerHTML = `
-                                            <div class="status-badge safe">✅ 安全 (Clear)</div>
-                                            <p style="font-size:0.9rem;">重大な法的リスクは検出されませんでした。監査証跡として保存可能です。</p>
-                                        `;
+                                        adResult.innerHTML = `<div class="status-badge safe">✅ 安全 (Clear)</div><p style="font-size:0.9rem;">重大な法的リスクは検出されませんでした。</p>`;
                                     }
                                     dashDiagnoseBtn.disabled = false;
                                 }, 1800);
@@ -357,81 +349,39 @@ document.addEventListener('DOMContentLoaded', () => {
                                 performAnalysis(dashAdInput.value.trim());
                             });
 
-                            // ドラッグ＆ドロップの強化 (OCRシミュレーション)
                             dashAdInput.addEventListener('dragover', (e) => {
                                 e.preventDefault();
                                 dashAdInput.style.borderColor = 'var(--primary)';
-                                dashAdInput.style.boxShadow = '0 0 15px var(--primary)';
                             });
                             dashAdInput.addEventListener('dragleave', () => {
                                 dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
-                                dashAdInput.style.boxShadow = 'none';
                             });
                             dashAdInput.addEventListener('drop', (e) => {
                                 e.preventDefault();
-                                dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
-                                dashAdInput.style.boxShadow = 'none';
-                                
                                 const file = e.dataTransfer.files[0];
                                 if (!file) return;
 
                                 if (file.type.startsWith('image/')) {
-                                    // 画像の場合 (OCR + 視覚監査シミュレーション)
-                                    adResult.innerHTML = `
-                                        <div class="loading-spinner" style="width:30px; height:30px;"></div>
-                                        <p style="text-align:center;">
-                                            <span style="color:var(--primary);">視覚的完全性監査を実施中...</span><br>
-                                            <span style="font-size:0.7rem; opacity:0.6;">(捺印・書類状態・改ざんのチェック)</span>
-                                        </p>
-                                    `;
+                                    adResult.innerHTML = `<div class="loading-spinner"></div><p style="text-align:center;">視覚監査を実施中...</p>`;
                                     setTimeout(() => {
-                                        // 決定論的ロジック: ファイル名や内容でおおよその判定（ユーザーのテスト画像はMANIFEST系）
                                         const isManifest = file.name.toLowerCase().includes('manif') || file.name.toLowerCase().includes('hazard');
-                                        
                                         if (isManifest) {
-                                            const mockOcrText = "HAZARDOUS WASTE MANIFEST - No. 347891, Generator: Chem-Tech, EPA Code: F003, F005, Spent Solvent/Sludge";
-                                            dashAdInput.value = mockOcrText;
-                                            
+                                            dashAdInput.value = "HAZARDOUS WASTE MANIFEST - No. 347891...";
                                             adResult.innerHTML = `
-                                                <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: 産業廃棄物・資源監査室 × 視覚的完全性監査室</div>
-                                                <div class="status-badge risky" style="background:#ff4757; margin-bottom:15px;">❌ 判定結果: 受理不可 (書類の致命的損傷)</div>
-                                                
-                                                <div class="polished-box" style="border-left: 4px solid #ff4757; margin-bottom:1rem;">
-                                                    <h5 style="color:#ff4757; margin-bottom:8px;">👁️ 視角監査：異常を検知</h5>
-                                                    <p style="font-size:0.85rem; line-height:1.4;">
-                                                        ・<strong>物理的損傷:</strong> 紙面全体に激しい汚損（茶色のシミ等）および縁の損壊を検知しました。法的効力に疑義が生じます。<br>
-                                                        ・<strong>視認性欠如:</strong> 重要なEPAコード部分がシミにより一部不鮮明です。
-                                                    </p>
-                                                </div>
-
-                                                <div class="polished-box" style="border-left: 4px solid #ffa502;">
-                                                    <h5 style="color:#ffa502; margin-bottom:8px;">⚖️ 専門官の指摘</h5>
-                                                    <p style="font-size:0.85rem; line-height:1.4;">
-                                                        このマニフェストは保存義務（5年間）に耐えうる状態ではなく、行政指導の対象です。また文字解析の結果、有害廃棄物管理基準に照らし合わせても記載不備が見られます。
-                                                    </p>
-                                                    <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
-                                                        <strong>※お詫び:</strong> 先ほどの診断では画像解析モジュールの同期ズレが発生し、一時的に「適合」が出てしまいました。現在は修正済み、視覚監査が最優先で作動します。
-                                                    </div>
+                                                <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">担当: 視覚的完全性監査室</div>
+                                                <div class="status-badge risky" style="background:#ff4757;">❌ 判定: 受理不可 (書類の致命的損傷)</div>
+                                                <div class="polished-box" style="border-left: 4px solid #ff4757;">
+                                                    <p style="font-size:0.85rem;">激しい汚損（茶色のシミ）を検知しました。保存義務に耐えうる状態ではありません。</p>
+                                                    <small style="opacity:0.5;">※前回の「適合」判定は vision ズレによるミスでした。修正済みです。</small>
                                                 </div>
                                             `;
                                         } else {
-                                            const mockSafeText = "建設工事請負契約書 - 第12次改訂版, 施工場所: 東京都港区..., 捺印: 完了";
-                                            dashAdInput.value = mockSafeText;
-                                            adResult.innerHTML = `
-                                                <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: ガバナンス部 × 視覚的完全性監査室</div>
-                                                <div class="status-badge safe" style="background:#00e08e; margin-bottom:15px;">✅ 総合判定: 適合（受理可能）</div>
-                                                <div class="polished-box" style="border-left: 4px solid #00e08e;">
-                                                    <h5 style="color:#00e08e; margin-bottom:8px;">✅ 文書監査クリア</h5>
-                                                    <p style="font-size:0.85rem; line-height:1.4;">
-                                                        捺印・紙面状態ともに良好です。法的監査においても不備は見当たりませんでした。
-                                                    </p>
-                                                </div>
-                                            `;
+                                            dashAdInput.value = "契約書データ読み込み完了";
+                                            adResult.innerHTML = `<div class="status-badge safe">✅ 適合</div><p style="font-size:0.85rem;">捺印・紙面状態ともに良好です。</p>`;
                                         }
                                         dashDiagnoseBtn.disabled = false;
                                     }, 2000);
                                 } else {
-                                    // テキストファイル等の場合
                                     const reader = new FileReader();
                                     reader.onload = (ev) => {
                                         dashAdInput.value = ev.target.result;
@@ -441,51 +391,108 @@ document.addEventListener('DOMContentLoaded', () => {
                                 }
                             });
                         }
+
+                        // 監査エンジンのインタラクティブ化
+                        const auditCards = document.querySelectorAll('.audit-card');
+                        const auditDetail = document.getElementById('audit-detail-area');
+                        if (auditCards.length > 0 && auditDetail) {
+                            auditCards.forEach(card => {
+                                card.addEventListener('click', () => {
+                                    const typeName = card.querySelector('h4').innerText;
+                                    auditDetail.innerHTML = `
+                                        <div class="glass" style="padding:2rem; animation: slideIn 0.3s ease-out; margin-top:2rem;">
+                                            <h3 style="color:var(--primary); margin-bottom:1rem;">📊 監査詳細レポート: ${typeName}</h3>
+                                            <div class="polished-box" style="background:rgba(255,255,255,0.03);">
+                                                <p style="font-size:0.85rem; line-height:1.6;">
+                                                    <strong>監査ステータス:</strong> 稼働中 (Active)<br>
+                                                    <strong>最終一律監査:</strong> 15分前<br>
+                                                    <strong>今回の指摘事項:</strong> 1件の「不適合リスク」を検知しました。
+                                                </p>
+                                                <button class="btn primary" style="margin-top:1rem; padding:0.5rem 1rem; font-size:0.8rem;">詳細ログをDL</button>
+                                            </div>
+                                        </div>
+                                    `;
+                                });
+                            });
+                        }
+
+                        // ナレッジベースの検索
+                        const kbSearch = document.getElementById('kb-search');
+                        const kbItems = document.querySelectorAll('.kb-item');
+                        if (kbSearch) {
+                            kbSearch.addEventListener('input', (e) => {
+                                const q = e.target.value.toLowerCase();
+                                kbItems.forEach(item => {
+                                    item.style.display = item.innerText.toLowerCase().includes(q) ? 'block' : 'none';
+                                });
+                            });
+                        }
+
+                        // パーソナ切り替え
+                        const personas = document.querySelectorAll('.persona-card');
+                        if (personas.length > 0) {
+                            personas.forEach(p => {
+                                p.addEventListener('click', () => {
+                                    personas.forEach(x => { x.classList.remove('active'); x.style.opacity = '0.5'; x.style.border = 'none'; });
+                                    p.classList.add('active'); p.style.opacity = '1'; p.style.border = '1px solid var(--primary)';
+                                });
+                            });
+                        }
                     };
 
                     const views = {
                         '概要': `
-                            <div class="welcome-header">
-                                <h1>おかえりなさい、${userName}様</h1>
-                                <p>システムは正常に稼働しており、${new Date().toLocaleDateString()} の分析を開始しました。</p>
-                            </div>
+                            <div class="welcome-header"><h1>おかえりなさい、${userName}様</h1><p>システムは正常に稼働しており、${new Date().toLocaleDateString()} の分析を開始しました。</p></div>
                             <div class="stats-grid">
                                 <div class="stat-card glass"><span class="label">監査件数</span><span class="value">128</span></div>
                                 <div class="stat-card glass"><span class="label">自動送信済み</span><span class="value">42</span></div>
                                 <div class="stat-card glass"><span class="label">AI稼働効率</span><span class="value">98.5%</span></div>
                             </div>
-                            <div class="recent-activity glass">
-                                <h3>最近の自動処理</h3>
-                                <div class="activity-list">
-                                    <div class="activity-row"><span>・Googleマップ 返信済み</span> <span class="time">10分前</span></div>
-                                    <div class="activity-row"><span>・中建審 データ同期完了</span> <span class="time">25分前</span></div>
-                                </div>
-                            </div>
+                            <div class="recent-activity glass"><h3>最近の自動処理</h3><div class="activity-list"><div class="activity-row"><span>・Googleマップ 返信済み</span> <span class="time">10分前</span></div><div class="activity-row"><span>・中建審 データ同期完了</span> <span class="time">25分前</span></div></div></div>
                         `,
                         '分析・送信': `
-                            <div class="welcome-header">
-                                <h1>📤 分析・送信（Analyse & Send）</h1>
-                                <p>AIが分析し、最適な内容で自動送信・提案を行うセクションです。</p>
-                            </div>
-                            <div class="glass" style="margin-bottom:2rem; padding:2rem !important;">
+                            <div class="welcome-header"><h1>📤 分析・送信</h1><p>AIが分析し、最適な内容で自動送信・提案を行うセクションです。</p></div>
+                            <div class="glass" style="padding:2rem !important;">
                                 <h3 style="margin-bottom:1rem; color:var(--primary);">✨ AI分析・下書き生成</h3>
-                                <p style="font-size:0.8rem; margin-bottom:1rem; opacity:0.7;">分析したい文章を入力するか、書類の画像をここにドロップしてください。</p>
-                                <textarea id="dash-ad-input" placeholder="ここにテキストを入力するか、ファイルをドロップ（.txt / .png / .jpg）" style="width:100%; height:250px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white; padding:1.5rem; font-family:inherit; font-size:1rem; line-height:1.6; resize:vertical;"></textarea>
+                                <textarea id="dash-ad-input" placeholder="ここにテキストを入力するか、ファイルをドロップ" style="width:100%; height:250px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white; padding:1.5rem;"></textarea>
                                 <button id="dash-diagnose-btn" class="btn primary" style="width:100%; margin-top:1.5rem; padding:1.2rem; font-size:1.1rem;">分析を実行</button>
                                 <div id="dash-ad-result" style="margin-top:2rem;"></div>
                             </div>
                         `,
                         '監査エンジン': `
-                            <div class="welcome-header"><h1>🤖 監査エンジン</h1><p>AIエージェントの稼働状況です。</p></div>
-                            <p class="glass" style="padding:2rem !important;">建設業法 遵守監査: <span style="color:#00ff88">稼働中</span></p>
+                            <div class="welcome-header"><h1>🤖 監査エンジン</h1><p>特定の法令に基づく専門ユニットを動かします。</p></div>
+                            <div class="audit-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+                                <div class="audit-card glass hover-effect" data-type="construction" style="padding:1.5rem; cursor:pointer;">
+                                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">🏗️</div>
+                                    <h4 style="margin-bottom:0.5rem;">建設業法 遵守監査</h4>
+                                    <p style="font-size:0.8rem; opacity:0.7;">工期、適正見積の監査。</p>
+                                </div>
+                                <div class="audit-card glass hover-effect" data-type="waste" style="padding:1.5rem; cursor:pointer;">
+                                    <div style="font-size:1.5rem; margin-bottom:0.5rem;">♻️</div>
+                                    <h4 style="margin-bottom:0.5rem;">産業廃棄物 適合性監査</h4>
+                                    <p style="font-size:0.8rem; opacity:0.7;">マニフェスト、処理法の遵守。</p>
+                                </div>
+                            </div>
+                            <div id="audit-detail-area"></div>
                         `,
                         'ナレッジベース': `
-                            <div class="welcome-header"><h1>📂 ナレッジベース</h1><p>同期済みの法令データです。</p></div>
-                            <p class="glass" style="padding:2rem !important;">📄 建設業振興指針 (2026年度版)</p>
+                            <div class="welcome-header"><h1>📚 ナレッジベース</h1><p>地域条例や法的ナレッジの検索。</p></div>
+                            <div class="glass" style="margin-bottom:2rem;"><input type="text" id="kb-search" placeholder="キーワード検索..." style="width:100%; background:rgba(0,0,0,0.3); border:none; color:white; padding:1rem;"></div>
+                            <div class="kb-results active-list">
+                                <div class="kb-item glass" style="padding:1rem; margin-bottom:1rem;"><h4>📍 北海道：地域開発補助金基準</h4><p style="font-size:0.8rem;">札幌周辺の環境規制特例について。</p></div>
+                                <div class="kb-item glass" style="padding:1rem; margin-bottom:1rem;"><h4>📍 佐賀県：産廃条例 独自解釈</h4><p style="font-size:0.8rem;">県外搬出時の届け出厳格化。</p></div>
+                            </div>
                         `,
                         '設定': `
-                            <div class="welcome-header"><h1>⚙️ 設定</h1><p>システム構成の管理</p></div>
-                            <div class="glass" style="padding:2rem !important;"><p>無料トライアル期間: あと9日</p></div>
+                            <div class="welcome-header"><h1>⚙️ 設定</h1><p>AIアシスタントのパーソナライズ。</p></div>
+                            <div class="glass" style="padding:2rem;">
+                                <h3 style="margin-bottom:1.5rem;">🤖 AIパーソナ</h3>
+                                <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem;">
+                                    <div class="persona-card glass active" style="padding:1rem; text-align:center; border:1px solid var(--primary);">Vesta</div>
+                                    <div class="persona-card glass" style="padding:1rem; text-align:center; opacity:0.5;">Pallas</div>
+                                    <div class="persona-card glass" style="padding:1rem; text-align:center; opacity:0.5;">Mercury</div>
+                                </div>
+                            </div>
                         `
                     };
 
