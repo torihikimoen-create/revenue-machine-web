@@ -298,25 +298,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.scrollTo(0,0);
 
                 // タブ切り替えロジックの追加
-                setTimeout(() => {
+                const attachDashboardListeners = () => {
                     const contentArea = document.querySelector('.dashboard-content');
                     const sidebarItems = document.querySelectorAll('.sidebar li');
                     
                     const views = {
-                        '概要': contentArea.innerHTML,
+                        '概要': `
+                            <div class="welcome-header">
+                                <h1>おかえりなさい、${userName}様</h1>
+                                <p>システムは正常に稼働しており、${new Date().toLocaleDateString()} の分析を開始しました。</p>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-card glass">
+                                    <span class="label">本日の監査件数</span>
+                                    <span class="value">128</span>
+                                </div>
+                                <div class="stat-card glass">
+                                    <span class="label">自動送信済み</span>
+                                    <span class="value">42</span>
+                                </div>
+                                <div class="stat-card glass">
+                                    <span class="label">AI稼働効率</span>
+                                    <span class="value">98.5%</span>
+                                </div>
+                            </div>
+                            <div class="recent-activity glass">
+                                <h3>最近の自動処理</h3>
+                                <div class="activity-list">
+                                    <div class="activity-row"><span>・Googleマップ レビュー返信予約済み (3件)</span> <span class="time">10分前</span></div>
+                                    <div class="activity-row"><span>・中建審 労務費データ同期完了</span> <span class="time">25分前</span></div>
+                                    <div class="activity-row"><span>・提出用レポートの下書き作成完了</span> <span class="time">1時間前</span></div>
+                                </div>
+                            </div>
+                        `,
                         '分析・送信': `
                             <div class="welcome-header">
                                 <h1>📤 分析・送信（Analyse & Send）</h1>
                                 <p>AIが分析し、最適な内容で自動送信・提案を行うセクションです。</p>
                             </div>
+                            
+                            <div class="glass" style="margin-bottom:2rem; padding:2rem !important;">
+                                <h3 style="margin-bottom:1rem; font-size:1.1rem; color:var(--primary);">✨ AI分析・下書き生成（マニュアル実行）</h3>
+                                <p style="font-size:0.85rem; margin-bottom:1.5rem; opacity:0.7;">分析したい広告コピーや、顧客への提案骨子を入力してください。AIがリスクを診断し、最適な下書きを生成します。</p>
+                                <div class="input-area">
+                                    <textarea id="dash-ad-input" placeholder="例：今なら絶対痩せる！魔法のダイエットサプリ登場。" style="width:100%; height:80px; margin-bottom:15px;"></textarea>
+                                    <button id="dash-diagnose-btn" class="btn primary" style="width:100%; border:none; cursor:pointer;">AI分析・提案生成を実行</button>
+                                </div>
+                                <div id="dash-ad-result" style="margin-top:20px;"></div>
+                            </div>
+
                             <div class="recent-activity glass" style="padding:1.5rem !important;">
+                                <h3>送信・下書き履歴</h3>
                                 <div class="activity-list">
                                     <div class="activity-row"><span>📩 【自動送信済み】B2B商談提案 3件（建設コンサルタント宛）</span> <span class="time">30分前</span></div>
                                     <div class="activity-row"><span>📝 【下書き作成】SNS返信案 5件（要承認あり）</span> <span class="time">1時間前</span></div>
-                                    <div class="activity-row"><span>📄 【レポート送付済】週報：労務管理ステータス</span> <span class="time">今日 9:00</span></div>
-                                </div>
-                                <div style="margin-top:20px; text-align:right;">
-                                    <button class="btn secondary" style="padding:0.5rem 1rem; font-size:0.8rem;">承認待ちリストを表示</button>
                                 </div>
                             </div>
                         `,
@@ -365,19 +400,69 @@ document.addEventListener('DOMContentLoaded', () => {
                         `
                     };
 
+                    const setupAnalyzeButton = () => {
+                        const dashDiagnoseBtn = document.getElementById('dash-diagnose-btn');
+                        if (dashDiagnoseBtn) {
+                            dashDiagnoseBtn.addEventListener('click', () => {
+                                const adInput = document.getElementById('dash-ad-input');
+                                const adResult = document.getElementById('dash-ad-result');
+                                const text = adInput.value.trim();
+                                if (!text) return;
+
+                                adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">AIが分析中...</p>`;
+                                dashDiagnoseBtn.disabled = true;
+
+                                setTimeout(() => {
+                                    const riskyKeywords = ["絶対", "痩せ", "病気", "治る", "若返る", "魔法", "シワ", "消え"];
+                                    const foundIssues = riskyKeywords.filter(kw => text.includes(kw));
+                                    
+                                    if (foundIssues.length > 0) {
+                                        let polished = "肌にうるおいを与え、ハリのある毎日を。年齢に応じたケアで自分らしい美しさを。";
+                                        adResult.innerHTML = `
+                                            <div class="status-badge risky" style="margin-bottom:15px; display:inline-block;">⚠️ リスク検知: 要修正</div>
+                                            <div class="polished-box" style="margin-top:0;">
+                                                <h5 style="color:var(--primary); margin-bottom:10px;">✨ AI安全リライト・提案書案</h5>
+                                                <div class="polished-text" style="font-size:0.95rem;">${polished}</div>
+                                                <button class="btn primary" style="margin-top:15px; font-size:0.8rem; padding:0.5rem 1rem;">この内容で送信/保存</button>
+                                            </div>
+                                        `;
+                                    } else {
+                                        adResult.innerHTML = `
+                                            <div class="status-badge safe" style="margin-bottom:15px; display:inline-block;">✅ 安全確認済み</div>
+                                            <p style="font-size:0.9rem;">この内容は法的リスクが低く、そのまま提案または送信可能です。</p>
+                                            <button class="btn primary" style="margin-top:15px; font-size:0.8rem; padding:0.5rem 1rem;">送信を実行する</button>
+                                        `;
+                                    }
+                                    dashDiagnoseBtn.disabled = false;
+                                }, 1500);
+                            });
+                        }
+                    };
+
                     sidebarItems.forEach(item => {
                         item.addEventListener('click', () => {
                             sidebarItems.forEach(i => i.classList.remove('active'));
                             item.classList.add('active');
-                            const viewName = item.innerText.replace(/^[^\s]+\s/, ''); // アイコンを除去して名前を取得
+                            const viewName = item.innerText.replace(/^[^\s]+\s/, '');
                             contentArea.innerHTML = views[viewName] || views['概要'];
+                            if (viewName === '分析・送信') setupAnalyzeButton();
                         });
                     });
-                }, 100);
+                };
+
+                attachDashboardListeners();
             }, 2500);
         }, 1500);
     });
 
-    // Continuous update
-    setInterval(addActivity, 4000);
+    // Continuous update (Safety check added for dashboard view)
+    setInterval(() => {
+        const activityList = document.querySelector('.activity-list');
+        if (!activityList) return; // Dashboard or different view might not have this specific list
+        
+        // Original addActivity logic if needed, or skip if in dashboard
+        if (typeof addActivity === 'function' && !document.querySelector('.dashboard-main')) {
+            addActivity();
+        }
+    }, 4000);
 });
