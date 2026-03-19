@@ -224,9 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             signupModal.innerHTML = `
                 <div class="modal-content glass" style="text-align:center;">
-                    <div style="font-size: 4rem; margin-bottom: 20px;">🎊</div>
-                    <h3 style="background:none; -webkit-text-fill-color: initial; color:var(--primary);">${userName}様、ようこそ</h3>
-                    <p>トライアルの申し込みが完了しました。<br>これよりダッシュボードへ案内いたします。</p>
+                    <div style="font-size: 4rem; margin-bottom: 20px;">📧</div>
+                    <h3 style="background:none; -webkit-text-fill-color: initial; color:var(--primary);">${userName}様、ありがとうございます</h3>
+                    <p>ご入力いただいたメールアドレスに、<br><strong>ログイン用IDと仮パスワード</strong>を送信いたしました。</p>
+                    <p style="font-size:0.8rem; margin-top:10px;">（※デモ環境のため、このままダッシュボードへ案内します）</p>
                     <div class="loading-spinner"></div>
                     <p style="color:var(--primary); font-weight:600;">System Initializing...</p>
                 </div>
