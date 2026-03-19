@@ -385,37 +385,56 @@ document.addEventListener('DOMContentLoaded', () => {
                                         </p>
                                     `;
                                     setTimeout(() => {
-                                        const mockOcrText = "HAZARDOUS WASTE MANIFEST - No. 347891, Generator: Chem-Tech, EPA Code: F003, F005, Spent Solvent/Sludge";
-                                        dashAdInput.value = mockOcrText;
+                                        // 全てがエラーになるのを防ぐため、ファイル名等で判定
+                                        const isSafe = file.name.toLowerCase().includes('safe') || file.name.toLowerCase().includes('ok') || Math.random() > 0.6;
                                         
-                                        // 視覚監査 + 文章監査の同時実行
-                                        adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">専門部署による深層複合診断中...</p>`;
-                                        
-                                        setTimeout(() => {
+                                        if (isSafe) {
+                                            const mockSafeText = "建設工事請負契約書 - 第12次改訂版, 施工場所: 東京都港区..., 捺印: 完了";
+                                            dashAdInput.value = mockSafeText;
                                             adResult.innerHTML = `
-                                                <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: 産業廃棄物・資源監査室 × 視覚的完全性監査室</div>
-                                                <div class="status-badge risky" style="background:#ff4757; margin-bottom:15px;">❌ 総合判定: 受理不可 (物理不備 & 法的リスク)</div>
-                                                
-                                                <div class="polished-box" style="border-left: 4px solid #ff4757; margin-bottom:1rem;">
-                                                    <h5 style="color:#ff4757; margin-bottom:8px;">👁️ 視覚・物理監査結果</h5>
+                                                <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: ガバナンス部 × 視覚的完全性監査室</div>
+                                                <div class="status-badge safe" style="background:#00e08e; margin-bottom:15px;">✅ 総合判定: 適合（受理可能）</div>
+                                                <div class="polished-box" style="border-left: 4px solid #00e08e;">
+                                                    <h5 style="color:#00e08e; margin-bottom:8px;">✅ 監査完了レポート</h5>
                                                     <p style="font-size:0.85rem; line-height:1.4;">
-                                                        ・<strong>捺印不備:</strong> 排出事業者印の印影が不鮮明、あるいは欠落している可能性があります。<br>
-                                                        ・<strong>書類状態:</strong> 紙面の損傷（くしゃくしゃ・汚損）が激しく、重要項目の視認性に問題があります。<br>
+                                                        ・<strong>視覚監査:</strong> 鮮明な捺印を検知しました。書類に物理的な欠損はなく、原本性は良好です。<br>
+                                                        ・<strong>法的監査:</strong> 最新の法令に基づき、すべての契約条項が適正であることを確認しました。
                                                     </p>
-                                                </div>
-
-                                                <div class="polished-box" style="border-left: 4px solid #ffa502;">
-                                                    <h5 style="color:#ffa502; margin-bottom:8px;">⚖️ 専門官の法的見解 (廃棄物処理法)</h5>
-                                                    <p style="font-size:0.85rem; line-height:1.4;">
-                                                        マニフェストNo.347891において、EPAコード F003(引火性廃油)が含まれていますが、該当施設での受入許可範囲外です。また、物理的な損傷により原本としての有効性が疑われるため、行政処分の対象となるリスクがあります。
-                                                    </p>
-                                                    <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
-                                                        <strong>強制アクション:</strong> 本マニフェストは破棄し、再発行と捺印のやり直し、および契約書の再照合を命じます。
-                                                    </div>
                                                 </div>
                                             `;
-                                            dashDiagnoseBtn.disabled = false;
-                                        }, 1800);
+                                        } else {
+                                            const mockOcrText = "HAZARDOUS WASTE MANIFEST - No. 347891, Generator: Chem-Tech, EPA Code: F003, F005, Spent Solvent/Sludge";
+                                            dashAdInput.value = mockOcrText;
+                                            
+                                            // 視覚監査 + 文章監査の同時実行
+                                            adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">専門部署による深層複合診断中...</p>`;
+                                            
+                                            setTimeout(() => {
+                                                adResult.innerHTML = `
+                                                    <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: 産業廃棄物・資源監査室 × 視覚的完全性監査室</div>
+                                                    <div class="status-badge risky" style="background:#ff4757; margin-bottom:15px;">❌ 総合判定: 受理不可 (物理不備 & 法的リスク)</div>
+                                                    
+                                                    <div class="polished-box" style="border-left: 4px solid #ff4757; margin-bottom:1rem;">
+                                                        <h5 style="color:#ff4757; margin-bottom:8px;">👁️ 視覚・物理監査結果</h5>
+                                                        <p style="font-size:0.85rem; line-height:1.4;">
+                                                            ・<strong>捺印不備:</strong> 排出事業者印の印影が不鮮明、あるいは欠落している可能性があります。<br>
+                                                            ・<strong>書類状態:</strong> 紙面の損傷（くしゃくしゃ・汚損）が激しく、重要項目の視認性に問題があります。<br>
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="polished-box" style="border-left: 4px solid #ffa502;">
+                                                        <h5 style="color:#ffa502; margin-bottom:8px;">⚖️ 専門官の法的見解 (廃棄物処理法)</h5>
+                                                        <p style="font-size:0.85rem; line-height:1.4;">
+                                                            マニフェストNo.347891において、EPAコード F003(引火性廃油)が含まれていますが、該当施設での受入許可範囲外です。また、物理的な損傷により原本としての有効性が疑われるため、行政処分の対象となるリスクがあります。
+                                                        </p>
+                                                        <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
+                                                            <strong>強制アクション:</strong> 本マニフェストは破棄し、再発行と捺印のやり直し、および契約書の再照合を命じます。
+                                                        </div>
+                                                    </div>
+                                                `;
+                                            }, 1800);
+                                        }
+                                        dashDiagnoseBtn.disabled = false;
                                     }, 2000);
                                 } else {
                                     // テキストファイル等の場合
@@ -456,16 +475,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                             <div class="glass" style="margin-bottom:2rem; padding:2rem !important;">
                                 <h3 style="margin-bottom:1rem; color:var(--primary);">✨ AI分析・下書き生成</h3>
-                                <p style="font-size:0.8rem; margin-bottom:1rem; opacity:0.7;">広告コピーの入力や、ファイルをここにドロップしてください。</p>
-                                <textarea id="dash-ad-input" placeholder="ここにテキストを入力するか、ファイルをドロップ（.txt/.md）"></textarea>
-                                <button id="dash-diagnose-btn" class="btn primary" style="width:100%; margin-top:1rem;">分析を実行</button>
-                                <div id="dash-ad-result" style="margin-top:1.5rem;"></div>
-                            </div>
-                            <div class="recent-activity glass">
-                                <h3>履歴</h3>
-                                <div class="activity-list">
-                                    <div class="activity-row"><span>📩 B2B提案送信済み</span> <span class="time">30分前</span></div>
-                                </div>
+                                <p style="font-size:0.8rem; margin-bottom:1rem; opacity:0.7;">分析したい文章を入力するか、書類の画像をここにドロップしてください。</p>
+                                <textarea id="dash-ad-input" placeholder="ここにテキストを入力するか、ファイルをドロップ（.txt / .png / .jpg）" style="width:100%; height:250px; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:white; padding:1.5rem; font-family:inherit; font-size:1rem; line-height:1.6; resize:vertical;"></textarea>
+                                <button id="dash-diagnose-btn" class="btn primary" style="width:100%; margin-top:1.5rem; padding:1.2rem; font-size:1.1rem;">分析を実行</button>
+                                <div id="dash-ad-result" style="margin-top:2rem;"></div>
                             </div>
                         `,
                         '監査エンジン': `
