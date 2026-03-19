@@ -303,50 +303,92 @@ document.addEventListener('DOMContentLoaded', () => {
                     const sidebarItems = document.querySelectorAll('.sidebar li');
                     
                     const setupDashboardBehaviors = (viewName) => {
-                        // AI分析ボタンのセットアップ
                         const dashDiagnoseBtn = document.getElementById('dash-diagnose-btn');
                         const dashAdInput = document.getElementById('dash-ad-input');
                         const adResult = document.getElementById('dash-ad-result');
 
                         if (dashDiagnoseBtn && dashAdInput) {
-                            dashDiagnoseBtn.addEventListener('click', () => {
-                                const text = dashAdInput.value.trim();
-                                if (!text) return;
-                                adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">AI分析中...</p>`;
+                            const performAnalysis = (text) => {
+                                adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">AIコンテクスト解析中...</p>`;
                                 dashDiagnoseBtn.disabled = true;
+
                                 setTimeout(() => {
-                                    const risky = ["絶対", "痩せ", "病気", "治わる", "魔法"];
-                                    const found = risky.filter(kw => text.includes(kw));
-                                    if (found.length > 0) {
-                                        adResult.innerHTML = `<div class="status-badge risky">⚠️ リスクあり</div><div class="polished-box"><h5>✨ リライト案</h5><p>${text.replace(/絶対|痩せ|魔法/g, "適正な")}...（AI調整済み）</p></div>`;
+                                    // コンテクスト判定
+                                    const isManifest = /manifest|マニフェスト|EPA|F003|solvent|sludge/i.test(text);
+                                    const isAdCopy = /絶対|痩せ|魔法|治る|若返る|シワ/i.test(text);
+
+                                    if (isManifest) {
+                                        // 産業廃棄物マニフェストの監査
+                                        adResult.innerHTML = `
+                                            <div class="status-badge risky" style="background:#ff4757;">⚠️ 監査アラート: 廃棄物処理法 抵触リスク</div>
+                                            <div class="polished-box" style="border-left: 4px solid #ff4757;">
+                                                <h5 style="color:#ff4757; margin-bottom:8px;">📌 検出された不備 (EPA Code: F003/F005)</h5>
+                                                <p style="font-size:0.85rem; line-height:1.4;">「Spent Solvent/Sludge」の処理に関する委託契約書との不一致を検知しました。マニフェストNo.347891は、最終処分場への直接搬入として記載されていますが、許可品目に「引火性廃油」が含まれていない可能性があります。</p>
+                                                <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
+                                                    <strong>推奨アクション:</strong> 排出事業者および運搬業者への再確認、およびマニフェスト情報の修正を推奨します。
+                                                </div>
+                                            </div>
+                                        `;
+                                    } else if (isAdCopy) {
+                                        // 広告コピーの監査
+                                        const risky = ["絶対", "痩せ", "魔法", "治る", "若返る", "シワ"];
+                                        const found = risky.filter(kw => text.includes(kw));
+                                        adResult.innerHTML = `
+                                            <div class="status-badge risky">⚠️ 薬機法・景表法リスクを検知</div>
+                                            <div class="polished-box">
+                                                <h5 style="color:var(--primary); margin-bottom:8px;">✨ AI安全リライト提案</h5>
+                                                <div class="polished-text" style="font-size:0.9rem;">${text.replace(/絶対|痩せ|魔法/g, "理想のスタイルをサポートする")}... (リライト済み)</div>
+                                            </div>
+                                        `;
                                     } else {
-                                        adResult.innerHTML = `<div class="status-badge safe">✅ 安全確認</div><p>法令遵守されています。</p>`;
+                                        // 一般的な文書
+                                        adResult.innerHTML = `
+                                            <div class="status-badge safe">✅ 安全 (Clear)</div>
+                                            <p style="font-size:0.9rem;">重大な法的リスクは検出されませんでした。監査証跡として保存可能です。</p>
+                                        `;
                                     }
                                     dashDiagnoseBtn.disabled = false;
-                                }, 1500);
+                                }, 1800);
+                            };
+
+                            dashDiagnoseBtn.addEventListener('click', () => {
+                                performAnalysis(dashAdInput.value.trim());
                             });
 
-                            // ドラッグ＆ドロップのセットアップ
+                            // ドラッグ＆ドロップの強化 (OCRシミュレーション)
                             dashAdInput.addEventListener('dragover', (e) => {
                                 e.preventDefault();
                                 dashAdInput.style.borderColor = 'var(--primary)';
-                                dashAdInput.style.background = 'rgba(0, 242, 255, 0.05)';
+                                dashAdInput.style.boxShadow = '0 0 15px var(--primary)';
                             });
                             dashAdInput.addEventListener('dragleave', () => {
                                 dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
-                                dashAdInput.style.background = 'rgba(0,0,0,0.2)';
+                                dashAdInput.style.boxShadow = 'none';
                             });
                             dashAdInput.addEventListener('drop', (e) => {
                                 e.preventDefault();
                                 dashAdInput.style.borderColor = 'rgba(255,255,255,0.1)';
-                                dashAdInput.style.background = 'rgba(0,0,0,0.2)';
+                                dashAdInput.style.boxShadow = 'none';
+                                
                                 const file = e.dataTransfer.files[0];
-                                if (file) {
-                                    const reader = new FileReader();
-                                    reader.onload = (ev) => { dashAdInput.value = ev.target.result; };
-                                    reader.readAsText(file);
+                                if (!file) return;
+
+                                if (file.type.startsWith('image/')) {
+                                    // 画像の場合 (OCRシミュレーション)
+                                    adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">OCR読み取り中... (画像をテキスト化しています)</p>`;
+                                    setTimeout(() => {
+                                        const mockOcrText = "HAZARDOUS WASTE MANIFEST - No. 347891, Generator: Chem-Tech, EPA Code: F003, F005, Spent Solvent/Sludge";
+                                        dashAdInput.value = mockOcrText;
+                                        performAnalysis(mockOcrText);
+                                    }, 2000);
                                 } else {
-                                    dashAdInput.value = e.dataTransfer.getData('text');
+                                    // テキストファイル等の場合
+                                    const reader = new FileReader();
+                                    reader.onload = (ev) => {
+                                        dashAdInput.value = ev.target.result;
+                                        performAnalysis(ev.target.result);
+                                    };
+                                    reader.readAsText(file);
                                 }
                             });
                         }
