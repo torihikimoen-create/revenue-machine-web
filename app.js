@@ -295,6 +295,68 @@ document.addEventListener('DOMContentLoaded', () => {
                     </style>
                 `;
                 window.scrollTo(0,0);
+
+                // タブ切り替えロジックの追加
+                setTimeout(() => {
+                    const contentArea = document.querySelector('.dashboard-content');
+                    const sidebarItems = document.querySelectorAll('.sidebar li');
+                    
+                    const views = {
+                        '概要': contentArea.innerHTML,
+                        '監査エンジン': `
+                            <div class="welcome-header">
+                                <h1>🤖 監査エンジン設定</h1>
+                                <p>稼働中のAIエージェントのステータスと、監視対象の設定を管理します。</p>
+                            </div>
+                            <div class="grid" style="grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+                                <div class="card glass" style="padding:1.5rem !important;">
+                                    <h3>建設業法 遵守監査</h3>
+                                    <p>・見積書の適正性一括チェック: <span style="color:#00ff88">稼働中</span></p>
+                                    <p>・契約書類の不備自動検知: <span style="color:#00ff88">稼働中</span></p>
+                                </div>
+                                <div class="card glass" style="padding:1.5rem !important;">
+                                    <h3>労務費基準 適合性監査</h3>
+                                    <p>・中央建設業審議会データ同期: <span style="color:#00ff88">最新</span></p>
+                                    <p>・下請契約の適正化モニタリング: <span style="color:#00ff88">稼働中</span></p>
+                                </div>
+                            </div>
+                        `,
+                        'ナレッジベース': `
+                            <div class="welcome-header">
+                                <h1>📂 ナレッジベース</h1>
+                                <p>AIが学習し、意思決定の根拠として使用するドキュメント一覧です。</p>
+                            </div>
+                            <div class="recent-activity glass" style="padding:1.5rem !important;">
+                                <div class="activity-list">
+                                    <div class="activity-row"><span>📄 2026年度 建設業振興指針 (PDF)</span> <span class="time">同期済み</span></div>
+                                    <div class="activity-row"><span>📄 北海道知事許可 独自解釈基準 (PDF)</span> <span class="time">同期済み</span></div>
+                                    <div class="activity-row"><span>📄 自社過去契約書テンプレート (Word)</span> <span class="time">5件</span></div>
+                                </div>
+                            </div>
+                        `,
+                        '設定': `
+                            <div class="welcome-header">
+                                <h1>⚙️ システム設定</h1>
+                                <p>アカウント情報の変更や通知設定を行います。</p>
+                            </div>
+                            <div class="glass" style="padding:2rem !important;">
+                                <p><strong>基本プラン:</strong> スタンダード運用（10日間無料トライアル中）</p>
+                                <p><strong>メール通知:</strong> 有効</p>
+                                <p><strong>自動レポート送付日:</strong> 毎週月曜日 9:00</p>
+                                <button class="btn secondary" style="margin-top:20px; padding:0.5rem 1.5rem;">設定を保存する</button>
+                            </div>
+                        `
+                    };
+
+                    sidebarItems.forEach(item => {
+                        item.addEventListener('click', () => {
+                            sidebarItems.forEach(i => i.classList.remove('active'));
+                            item.classList.add('active');
+                            const viewName = item.innerText.replace(/^[^\s]+\s/, ''); // アイコンを除去して名前を取得
+                            contentArea.innerHTML = views[viewName] || views['概要'];
+                        });
+                    });
+                }, 100);
             }, 2500);
         }, 1500);
     });
