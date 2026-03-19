@@ -34,7 +34,7 @@
                 <p class="subtitle">24時間365日、私たちのチームとAIが連携し、現場の「事務・営業・実務」を最短距離で支えます。あなたは本来の意思決定に、すべての情熱を注げるようになります。</p>
                 <div class="trial-badge">期間限定：10日間無料トライアル実施中</div>
                 <div class="cta-buttons">
-                    <a href="#pricing" class="btn primary">10日間無料で体験する</a>
+                    <a href="#pricing" class="btn primary trial-trigger">10日間無料で体験する</a>
                     <a href="#features" class="btn secondary">支援の内容を見る</a>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                         <li><span class="check">✔</span> 写真・書類のスマホ自動解析フロー</li>
                         <li><span class="check">✔</span> 優先メールサポート</li>
                     </ul>
-                    <a href="mailto:torihikimoen@gmail.com?subject=【AETHER CORE】体験申し込み（共生プラン）" class="btn primary" style="width:100%; margin-top:15px; text-align:center;">10日間無料で「相棒」を試す</a>
+                    <a href="#" class="btn primary trial-trigger" style="width:100%; margin-top:15px; text-align:center;">10日間無料で「相棒」を試す</a>
                 </div>
             </div>
             <p style="text-align: center; margin-top: 20px; opacity: 0.7;">※詳細なカスタマイズおよび大規模構成についてはお問い合わせください。</p>
@@ -188,6 +188,37 @@
             </div>
         </div>
     </footer>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <h3>AETHER CORE 体験申し込み</h3>
+            <p>10日間の無料トライアルを開始して、<br>次世代の経営支援を体感してください。</p>
+            
+            <form id="signup-form">
+                <div class="input-group">
+                    <label>お名前</label>
+                    <input type="text" id="user-name" placeholder="例：山田 太郎" required>
+                </div>
+                <div class="input-group">
+                    <label>メールアドレス</label>
+                    <input type="email" id="user-email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label>パスワード</label>
+                    <input type="password" id="user-pw" placeholder="8文字以上" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms-check" required>
+                    <label for="terms-check">利用規約およびプライバシーポリシーに同意する</label>
+                </div>
+                <button type="submit" class="btn primary" style="width:100%; border:none; margin:0; cursor:pointer;">無料でトライアルを開始</button>
+            </form>
+            
+            <p class="login-link">既にアカウントをお持ちですか？ <a href="#">ログイン</a></p>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

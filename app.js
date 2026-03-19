@@ -187,6 +187,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1800);
     });
 
+    // Modal Logic
+    const signupModal = document.getElementById('signup-modal');
+    const trialTriggers = document.querySelectorAll('.trial-trigger');
+    const closeModal = document.getElementById('close-modal');
+    const signupForm = document.getElementById('signup-form');
+
+    trialTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            if (trigger.getAttribute('href') === '#') {
+                e.preventDefault();
+                signupModal.classList.add('active');
+            }
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        signupModal.classList.remove('active');
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === signupModal) {
+            signupModal.classList.remove('active');
+        }
+    });
+
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userName = document.getElementById('user-name').value;
+        const submitBtn = signupForm.querySelector('button[type="submit"]');
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<div class="loading-spinner" style="width:20px; height:20px; border-width:2px; margin:0 auto;"></div>';
+
+        // 登録完了のシミュレーション
+        setTimeout(() => {
+            signupModal.innerHTML = `
+                <div class="modal-content glass" style="text-align:center;">
+                    <div style="font-size: 4rem; margin-bottom: 20px;">🎊</div>
+                    <h3 style="background:none; -webkit-text-fill-color: initial; color:var(--primary);">${userName}様、ようこそ</h3>
+                    <p>トライアルの申し込みが完了しました。<br>これよりダッシュボードへ案内いたします。</p>
+                    <div class="loading-spinner"></div>
+                    <p style="color:var(--primary); font-weight:600;">System Initializing...</p>
+                </div>
+            `;
+            
+            // 3秒後にダッシュボードへ遷移する体にする
+            setTimeout(() => {
+                alert("ダッシュボードへ遷移します（モックアップ）");
+                location.reload(); // デモなのでリロード
+            }, 3000);
+        }, 2000);
+    });
+
     // Continuous update
     setInterval(addActivity, 4000);
 });
