@@ -7,6 +7,16 @@
     --glass-border: rgba(255, 255, 255, 0.1);
 }
 
+/* Fallback for legacy browsers */
+body {
+    background-color: #05050a; /* Simple background */
+    color: #ffffff;
+}
+
+.glass {
+    background: #0f0f1a; /* Opaque background for old IE */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -339,4 +349,58 @@ footer a {
 .portal-link:hover {
     opacity: 1;
     text-decoration: underline;
+}
+
+/* System Requirements Banner */
+.legacy-warning {
+    display: none;
+    background: #ffaa00;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+
+/* Contact Section Styles */
+#contact {
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.contact-card h4 {
+    margin: 1rem 0 0.5rem;
+    color: var(--primary);
+}
+
+.contact-card a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-card a:hover {
+    color: var(--primary);
 }

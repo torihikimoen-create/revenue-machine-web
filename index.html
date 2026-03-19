@@ -12,14 +12,19 @@
 <body>
     <div class="background-blur"></div>
     
+    <!-- Legacy Browser Warning (Managed by app.js) -->
+    <div id="legacy-warning" class="legacy-warning">
+        【推奨環境】当サイトは最新のブラウザ（Chrome, Edge等）に最適化されています。古いOS・ブラウザでは正しく表示されない場合があります。
+    </div>
+    
     <header>
         <nav>
             <div class="logo">AETHER<span>CORE</span></div>
             <ul>
-                <li><a href="#features">Engines</a></li>
-                <li><a href="#global">Global</a></li>
-                <li><a href="#status">Live Status</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#features">支援エンジン</a></li>
+                <li><a href="#global">共創ネットワーク</a></li>
+                <li><a href="#status">稼働状況</a></li>
+                <li><a href="#contact">ご相談</a></li>
             </ul>
         </nav>
     </header>
@@ -27,62 +32,62 @@
     <main>
         <section id="hero">
             <div class="hero-content">
-                <h1 class="glitch-text">Autonomous<br>Business Empire</h1>
-                <p class="subtitle">24時間365日、AIが「集客・営業・商談・実務」を完遂し、世界中から収益を釣り上げる。次世代の完全自律型ビジネスプラットフォーム。</p>
+                <h1 class="glitch-text">自律型ビジネス<br>共生システム</h1>
+                <p class="subtitle">24時間365日、AIが「現場の事務・営業・管理」を静かに支え、持続可能な成長を共に創り出す。次世代の共創型ビジネスプラットフォーム。</p>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn primary">Start 10-Day Free Trial</a>
-                    <a href="#features" class="btn secondary">Explore Engines</a>
+                    <a href="#contact" class="btn primary">10日間。まずは無料で体験する</a>
+                    <a href="#features" class="btn secondary">支援の内容を見る</a>
                 </div>
             </div>
         </section>
 
         <section id="features">
-            <h2 class="section-title">Quad-Core Engines</h2>
+            <h2 class="section-title">4つの伴走エンジン</h2>
             <div class="grid">
                 <div class="card glass">
-                    <div class="icon">⭐</div>
-                    <h3>Google Reviews Auto</h3>
-                    <p>日英米の市場トーンに最適化されたAIが、店舗の信頼性を自動で最大化します。</p>
+                    <div class="icon">🌿</div>
+                    <h3>地域・マップ守護</h3>
+                    <p>地域密着型AIが、お店の評判と信頼を大切に育みます。日英米の文化に合わせた丁寧な対応を実現。</p>
                 </div>
                 <div class="card glass">
-                    <div class="icon">🎯</div>
-                    <h3>SNS Sales Hunter</h3>
-                    <p>DMに溢れるインフルエンサーの課題をAIが検知。最適なソリューションを多言語で自動提案。</p>
+                    <div class="icon">🤝</div>
+                    <h3>SNS課題発見・橋渡し</h3>
+                    <p>SNS上の潜在的な困りごとをAIがそっと検知。最適な解決策を提案し、新しいご縁を繋ぎます。</p>
                 </div>
                 <div class="card glass">
-                    <div class="icon">📂</div>
-                    <h3>File Cleanup Sage</h3>
-                    <p>数万件の非構造化データをAIが分析・命名・整理。業務効率を劇的に改善します。</p>
+                    <div class="icon">📚</div>
+                    <h3>ナレッジ・整理・コンシェルジュ</h3>
+                    <p>複雑なデータをAIが丁寧に整理・命名。皆様の知恵を資産として守り、日々の業務を軽やかにします。</p>
                 </div>
                 <div class="card glass">
-                    <div class="icon">💰</div>
-                    <h3>B2B Deal Finder</h3>
-                    <p>高単価なWeb案件・整理案件を自動で釣り上げ、説得力のある提案書をAIが自動生成。</p>
+                    <div class="icon">🧭</div>
+                    <h3>自律型・営業ナビゲーター</h3>
+                    <p>法規制を遵守した合議制AIが、真心を込めた提案書を作成。現場の熱意を適切な相手へ届けます。</p>
                 </div>
             </div>
         </section>
 
         <section id="status">
             <div class="status-container glass">
-                <h2 class="section-title">Live Network Status</h2>
+                <h2 class="section-title">ライブ稼働ステータス</h2>
                 <div class="status-grid">
                     <div class="status-item">
-                        <span class="label">Total Revenue (Simulated)</span>
+                        <span class="label">支援を通じた創出価値</span>
                         <span class="value" id="stat-revenue">¥1,250,500</span>
                     </div>
                     <div class="status-item">
-                        <span class="label">Global Hubs</span>
-                        <span class="value">Tokyo / NY / London / <span class="blink">Singapore</span></span>
+                        <span class="label">主要拠点</span>
+                        <span class="value">東京 / NY / ロンドン / <span class="blink">シンガポール</span></span>
                     </div>
                     <div class="status-item">
-                        <span class="label">Active AI Workers</span>
-                        <span class="value">24 Units</span>
+                        <span class="label">寄り添うAIユニット</span>
+                        <span class="value">24 ユニット</span>
                     </div>
                 </div>
                 
                 <div class="activity-feed-wrapper">
                     <div class="feed-header">
-                        <span class="dot green blink"></span> LIVE ACTIVITY FEED
+                        <span class="dot green blink"></span> リアルタイム・アクティビティ
                     </div>
                     <div id="activity-feed" class="activity-feed">
                         <!-- Activities will be injected here by app.js -->
@@ -90,20 +95,37 @@
                 </div>
 
                 <div class="live-indicator">
-                    System fully operational across all time zones.
+                    すべての地域で、皆様を支えるシステムが正常稼働しています。
                 </div>
             </div>
         </section>
 
         <section id="global">
-            <h2 class="section-title">Global Reach</h2>
+            <h2 class="section-title">分かち合うネットワーク</h2>
             <div class="map-placeholder glass">
-                <p>Establishing presence in Tokyo, New York, London, and expanding to Singapore/Sydney.</p>
+                <p>世界各地の拠点が連携し、それぞれの地域の文化と規制を尊重しながら、持続可能な未来を支えています。</p>
                 <div class="location-markers">
                     <div class="marker tokyo">●</div>
                     <div class="marker ny">●</div>
                     <div class="marker london">●</div>
                     <div class="marker sg">●</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-container glass">
+                <h2 class="section-title">ご相談・お問い合わせ</h2>
+                <p class="subtitle">変化の激しい時代、自動化ではなく「共生」という選択を。まずは10日間のフル機能トライアルで、その安心感をご体感ください。</p>
+                <div class="contact-methods">
+                    <div class="contact-card">
+                        <span class="icon">💌</span>
+                        <h4>お気軽にご連絡ください</h4>
+                        <p><a href="mailto:torihikimoen@gmail.com">torihikimoen@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="trial-cta" style="margin-top: 3rem;">
+                    <a href="mailto:torihikimoen@gmail.com?subject=【AETHER CORE】10日間無料トライアル申し込み（共生プラン）" class="btn primary">10日間無料トライアルで相棒を試す</a>
                 </div>
             </div>
         </section>
@@ -113,14 +135,14 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>AETHER CORE プロジェクト</h4>
-                <p>© 2026 Global Automation Empire. All rights reserved.</p>
+                <p>© 2026 Global Automation Co-evolution. All rights reserved.</p>
             </div>
             <div class="footer-section">
                 <p>
                     <a href="terms.html">利用規約</a> | 
                     <a href="privacy.html">プライバシーポリシー</a> | 
                     <a href="tokushoho.html">特定商取引法に基づく表記</a> |
-                    <a href="#" class="portal-link">契約の管理・解約</a>
+                    <a href="https://billing.stripe.com/p/login/51TATU2RYiyjSkMXp" class="portal-link">契約の管理・解約</a>
                 </p>
             </div>
         </div>

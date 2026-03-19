@@ -63,4 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Continuous update
     setInterval(addActivity, 4000);
+
+    // Legacy Support Check
+    if (!window.CSS || !CSS.supports || !CSS.supports('display', 'flex')) {
+        const warning = document.getElementById('legacy-warning');
+        if (warning) warning.style.display = 'block';
+        document.body.classList.add('is-legacy');
+    }
 });
