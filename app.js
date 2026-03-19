@@ -240,6 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <aside class="sidebar glass">
                             <ul>
                                 <li class="active">📊 概要</li>
+                                <li>📤 分析・送信</li>
                                 <li>🤖 監査エンジン</li>
                                 <li>📂 ナレッジベース</li>
                                 <li>⚙️ 設定</li>
@@ -256,8 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="value">128</span>
                                 </div>
                                 <div class="stat-card glass">
-                                    <span class="label">リスク検知数</span>
-                                    <span class="value">3</span>
+                                    <span class="label">自動送信済み</span>
+                                    <span class="value">42</span>
                                 </div>
                                 <div class="stat-card glass">
                                     <span class="label">AI稼働効率</span>
@@ -303,6 +304,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     const views = {
                         '概要': contentArea.innerHTML,
+                        '分析・送信': `
+                            <div class="welcome-header">
+                                <h1>📤 分析・送信（Analyse & Send）</h1>
+                                <p>AIが分析し、最適な内容で自動送信・提案を行うセクションです。</p>
+                            </div>
+                            <div class="recent-activity glass" style="padding:1.5rem !important;">
+                                <div class="activity-list">
+                                    <div class="activity-row"><span>📩 【自動送信済み】B2B商談提案 3件（建設コンサルタント宛）</span> <span class="time">30分前</span></div>
+                                    <div class="activity-row"><span>📝 【下書き作成】SNS返信案 5件（要承認あり）</span> <span class="time">1時間前</span></div>
+                                    <div class="activity-row"><span>📄 【レポート送付済】週報：労務管理ステータス</span> <span class="time">今日 9:00</span></div>
+                                </div>
+                                <div style="margin-top:20px; text-align:right;">
+                                    <button class="btn secondary" style="padding:0.5rem 1rem; font-size:0.8rem;">承認待ちリストを表示</button>
+                                </div>
+                            </div>
+                        `,
                         '監査エンジン': `
                             <div class="welcome-header">
                                 <h1>🤖 監査エンジン設定</h1>
