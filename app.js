@@ -376,12 +376,46 @@ document.addEventListener('DOMContentLoaded', () => {
                                 if (!file) return;
 
                                 if (file.type.startsWith('image/')) {
-                                    // 画像の場合 (OCRシミュレーション)
-                                    adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">OCR読み取り中... (画像をテキスト化しています)</p>`;
+                                    // 画像の場合 (OCR + 視覚監査シミュレーション)
+                                    adResult.innerHTML = `
+                                        <div class="loading-spinner" style="width:30px; height:30px;"></div>
+                                        <p style="text-align:center;">
+                                            <span style="color:var(--primary);">視覚的完全性監査を実施中...</span><br>
+                                            <span style="font-size:0.7rem; opacity:0.6;">(捺印・書類状態・改ざんのチェック)</span>
+                                        </p>
+                                    `;
                                     setTimeout(() => {
                                         const mockOcrText = "HAZARDOUS WASTE MANIFEST - No. 347891, Generator: Chem-Tech, EPA Code: F003, F005, Spent Solvent/Sludge";
                                         dashAdInput.value = mockOcrText;
-                                        performAnalysis(mockOcrText);
+                                        
+                                        // 視覚監査 + 文章監査の同時実行
+                                        adResult.innerHTML = `<div class="loading-spinner" style="width:30px; height:30px;"></div><p style="text-align:center;">専門部署による深層複合診断中...</p>`;
+                                        
+                                        setTimeout(() => {
+                                            adResult.innerHTML = `
+                                                <div style="font-size:0.75rem; color:var(--primary); margin-bottom:5px; font-weight:700;">担当: 産業廃棄物・資源監査室 × 視覚的完全性監査室</div>
+                                                <div class="status-badge risky" style="background:#ff4757; margin-bottom:15px;">❌ 総合判定: 受理不可 (物理不備 & 法的リスク)</div>
+                                                
+                                                <div class="polished-box" style="border-left: 4px solid #ff4757; margin-bottom:1rem;">
+                                                    <h5 style="color:#ff4757; margin-bottom:8px;">👁️ 視覚・物理監査結果</h5>
+                                                    <p style="font-size:0.85rem; line-height:1.4;">
+                                                        ・<strong>捺印不備:</strong> 排出事業者印の印影が不鮮明、あるいは欠落している可能性があります。<br>
+                                                        ・<strong>書類状態:</strong> 紙面の損傷（くしゃくしゃ・汚損）が激しく、重要項目の視認性に問題があります。<br>
+                                                    </p>
+                                                </div>
+
+                                                <div class="polished-box" style="border-left: 4px solid #ffa502;">
+                                                    <h5 style="color:#ffa502; margin-bottom:8px;">⚖️ 専門官の法的見解 (廃棄物処理法)</h5>
+                                                    <p style="font-size:0.85rem; line-height:1.4;">
+                                                        マニフェストNo.347891において、EPAコード F003(引火性廃油)が含まれていますが、該当施設での受入許可範囲外です。また、物理的な損傷により原本としての有効性が疑われるため、行政処分の対象となるリスクがあります。
+                                                    </p>
+                                                    <div style="margin-top:10px; padding:10px; background:rgba(255,255,255,0.05); font-size:0.8rem;">
+                                                        <strong>強制アクション:</strong> 本マニフェストは破棄し、再発行と捺印のやり直し、および契約書の再照合を命じます。
+                                                    </div>
+                                                </div>
+                                            `;
+                                            dashDiagnoseBtn.disabled = false;
+                                        }, 1800);
                                     }, 2000);
                                 } else {
                                     // テキストファイル等の場合
