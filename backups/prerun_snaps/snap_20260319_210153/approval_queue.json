@@ -2510,42 +2510,5 @@
         "status": "PENDING",
         "timestamp": "2026-03-19T18:01:13.109918",
         "executed_at": null
-    },
-    {
-        "task_id": "TASK_20260319_210158_SYSTE",
-        "client_id": "SYSTEM_SCOUT",
-        "sector": "MARKET_RESEARCH",
-        "action_type": "MarketExpansion",
-        "content": "【新市場提案】RegionalBankComplianceセクターへの緊急参入プロトコル\n概要: 地方銀行のKYC（継続的顧客確認）業務の外注・自動化需要の急増\n期待収益: High (月額サブスクリプション + 初回セットアップ費用)",
-        "metadata": {},
-        "consensus": {
-            "summary": "REJECTED",
-            "opinions": [
-                {
-                    "expert": "Legal Counsel",
-                    "status": "REJECTED",
-                    "message": "【鉄壁ガードレール：強制リジェクト】以下の法的リスク/不備を検知しました:\n\n提案内容に具体的な法的根拠や裏取りデータが不足しているため、法的な妥当性を確認できない。"
-                },
-                {
-                    "expert": "Brand Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入提案は、地方銀行のニーズに応えるものであり、収益性も高いと期待されるため。"
-                },
-                {
-                    "expert": "Operations Expert",
-                    "status": "APPROVED",
-                    "message": "地方銀行のKYC業務の外注・自動化需要が高まっているため、新市場への参入は実用的で収益性が期待できる。"
-                }
-            ],
-            "fact_checks": {
-                "verified": true,
-                "claims_detected": [],
-                "violations": [],
-                "risk_level": "NORMAL"
-            }
-        },
-        "status": "PENDING",
-        "timestamp": "2026-03-19T21:01:58.709476",
-        "executed_at": null
     }
 ]
