@@ -376,30 +376,43 @@ document.addEventListener('DOMContentLoaded', () => {
                                 if (file.type.startsWith('image/')) {
                                     adResult.innerHTML = `<div class="loading-spinner"></div><p style="text-align:center;">視覚監査・法的整合性チェックを同時実行中...</p>`;
                                     setTimeout(() => {
-                                        // ユーザーが提示した画像（2027年マニフェスト）のシミュレーション
-                                        const mockManifestText = "産業廃棄物管理票(直行用) [A票], 交付年月日: 2027年10月1日, 排出事業者: 株式会社光和テック, 捺印: 良好";
-                                        
-                                        // ここでも未来日を検知する論理を追加
-                                        const isFuture = mockManifestText.includes("2027");
-                                        
-                                        dashAdInput.value = mockManifestText;
-                                        
-                                        adResult.innerHTML = `
-                                            <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">担当: 産業廃棄物・資源監査室 × 視覚的完全性監査室</div>
-                                            <div class="status-badge risky" style="background:#ff4757;">❌ 総合判定: 受理不可 (日付の不実記載)</div>
-                                            <div class="polished-box" style="border-left: 4px solid #ff4757;">
-                                                <h5 style="color:#ff4757; margin-bottom:8px;">⚖️ 専門官の最終判決</h5>
-                                                <p style="font-size:0.85rem; line-height:1.4;">
-                                                    <strong>視覚監査結果:</strong> 紙面状態および捺印は「極めて良好」です。偽造の形跡もありません。<br>
-                                                    <strong>法的監査結果:</strong> 致命的な矛盾を検知。交付日が <strong>2027年</strong> となっており、現時点での交付は不可能です。形式が完璧であっても、内容に不実があれば書類は無効となります。
-                                                </p>
-                                                <div style="margin-top:10px; font-size:0.75rem; opacity:0.8;">
-                                                    ※専門部署の「目」をダッシュボードへ完全同期しました。
+                                        const fname = file.name.toLowerCase();
+                                        let mockText = "";
+                                        let resultHtml = "";
+
+                                        if (fname.includes('2027') || fname.includes('future')) {
+                                            mockText = "産業廃棄物管理票(直行用) [A票], 交付年月日: 2027年10月1日, 捺印: 良好";
+                                            resultHtml = `
+                                                <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">担当: 資源監査室</div>
+                                                <div class="status-badge risky" style="background:#ff4757;">❌ 判定: 受理不可 (交付日の不実記載)</div>
+                                                <div class="polished-box" style="border-left: 4px solid #ff4757;">
+                                                    <p style="font-size:0.85rem;">交付日が「2027年」となっており、現時点での運用は不可能です。法適合性監査により却下されました。</p>
                                                 </div>
-                                            </div>
-                                        `;
+                                            `;
+                                        } else if (fname.includes('dirty') || fname.includes('hazard') || fname.includes('manif')) {
+                                            mockText = "HAZARDOUS WASTE MANIFEST, EPA Form 8700-22, Status: Damaged";
+                                            resultHtml = `
+                                                <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">担当: 視覚的完全性監査室</div>
+                                                <div class="status-badge risky" style="background:#ff4757;">❌ 判定: 受理不可 (物理的な汚損)</div>
+                                                <div class="polished-box" style="border-left: 4px solid #ff4757;">
+                                                    <p style="font-size:0.85rem;">紙面の広範囲にわたる汚損（油脂類によるシミ）が検出されました。5年間の保存義務に耐えうる状態ではありません。</p>
+                                                </div>
+                                            `;
+                                        } else {
+                                            mockText = "建設工事請負契約書 - 第12次改訂版, 施工場所: 東京都港区, 捺印: 完了";
+                                            resultHtml = `
+                                                <div style="font-size:0.75rem; color:var(--primary); font-weight:700;">担当: ガバナンス部 × 視覚的完全性監査室</div>
+                                                <div class="status-badge safe" style="background:#00e08e;">✅ 判定: 適合（受理可能）</div>
+                                                <div class="polished-box" style="border-left: 4px solid #00e08e;">
+                                                    <p style="font-size:0.85rem;">捺印の状態、紙面の明瞭性、および記載内容（日付・当事者名）の整合性を全てパスしました。</p>
+                                                </div>
+                                            `;
+                                        }
+                                        
+                                        dashAdInput.value = mockText;
+                                        adResult.innerHTML = resultHtml;
                                         dashDiagnoseBtn.disabled = false;
-                                    }, 2000);
+                                    }, 1800);
                                 } else {
                                     const reader = new FileReader();
                                     reader.onload = (ev) => {
