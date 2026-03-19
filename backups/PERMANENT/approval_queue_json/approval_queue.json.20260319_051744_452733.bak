@@ -2362,42 +2362,5 @@
         "status": "PENDING",
         "timestamp": "2026-03-18T23:03:06.139756",
         "executed_at": null
-    },
-    {
-        "task_id": "TASK_20260319_051744_SYSTE",
-        "client_id": "SYSTEM_SCOUT",
-        "sector": "MARKET_RESEARCH",
-        "action_type": "MarketExpansion",
-        "content": "【新市場提案】WasteManagementセクターへの緊急参入プロトコル\n概要: 産業廃棄物管理票（マニフェスト）の電子化義務化に伴う小規模事業者の混乱\n期待収益: High (月額サブスクリプション + 初回セットアップ費用)",
-        "metadata": {},
-        "consensus": {
-            "summary": "REJECTED",
-            "opinions": [
-                {
-                    "expert": "Legal Counsel",
-                    "status": "REJECTED",
-                    "message": "【鉄壁ガードレール：強制リジェクト】以下の法的リスク/不備を検知しました:\n\n提案内容に具体的な法的根拠や裏取りデータが不足しているため、法的事実を確認できない。"
-                },
-                {
-                    "expert": "Brand Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入提案は、業界のニーズに応えるものであり、期待収益も高いため、承認します。"
-                },
-                {
-                    "expert": "Operations Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入は高い収益が期待でき、特に電子化義務化に伴うニーズに応えることで競争優位性を持つ可能性があるため。"
-                }
-            ],
-            "fact_checks": {
-                "verified": true,
-                "claims_detected": [],
-                "violations": [],
-                "risk_level": "NORMAL"
-            }
-        },
-        "status": "PENDING",
-        "timestamp": "2026-03-19T05:17:44.452665",
-        "executed_at": null
     }
 ]
