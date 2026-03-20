@@ -161,16 +161,5 @@
         "trials_offered": 0
       }
     }
-  },
-  "2026-03-20": {
-    "total_proposals_sent": 0,
-    "trials_offered": 0,
-    "date": "2026-03-20",
-    "sector_stats": {
-      "Nursing": {
-        "proposals_sent": 1,
-        "trials_offered": 0
-      }
-    }
   }
 }
