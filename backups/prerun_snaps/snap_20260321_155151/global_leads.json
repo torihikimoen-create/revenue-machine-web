@@ -1,0 +1,1895 @@
+[
+  {
+    "city": "Tokyo",
+    "sector": "Osteopathy",
+    "targets": [
+      {
+        "name": "青山筋膜整体理学BODY 表参道店",
+        "platform": "Hot Pepper Beauty",
+        "url": "https://kabushikigaisya-rigakubody.co.jp",
+        "issue": "Multiple locations, manual reply overhead",
+        "lang": "ja"
+      },
+      {
+        "name": "Osteopathy Tokyo Therapy & Wellness Center",
+        "platform": "Google Maps",
+        "url": "https://tokyotherapycenter.com",
+        "issue": "High rating but potential for automated review response integration",
+        "lang": "ja"
+      }
+    ]
+  },
+  {
+    "city": "New York",
+    "sector": "Luxury Beauty",
+    "targets": [
+      {
+        "name": "Darlings Beauty Lab",
+        "platform": "Google Reviews",
+        "url": "https://atly.com/darlingsbeautylab",
+        "issue": "High-end clientele requires instant, personalized engagement",
+        "lang": "en"
+      },
+      {
+        "name": "Cedric Salon",
+        "platform": "Yelp",
+        "url": "https://cedricsalon.com",
+        "issue": "European elegance brand requires 24/7 multilingual support",
+        "lang": "en"
+      }
+    ]
+  },
+  {
+    "city": "London",
+    "sector": "SME Law Firm",
+    "targets": [
+      {
+        "name": "Aria Grace Law",
+        "platform": "Legal Directories",
+        "url": "https://aria-grace.com",
+        "email": "mock-aria@example.co.uk",
+        "issue": "Innovative ethical model, needs document cleanup for scaling",
+        "lang": "en"
+      },
+      {
+        "name": "Culbert Ellis",
+        "platform": "LinkedIn / Web",
+        "url": "https://chambers.com/law-firm/culbert-ellis-london",
+        "email": "mock-culbert@example.co.uk",
+        "issue": "Tech-focused SME support, needs lead qualification AI",
+        "lang": "en"
+      }
+    ]
+  },
+  {
+    "city": "兵庫",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Nursing_兵庫_0247",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=兵庫+Nursing",
+        "issue": "【Nursingの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Nursing",
+        "city": "兵庫",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Construction_Lead_5344",
+        "issue": "Construction compliance/reporting burden",
+        "city": "兵庫",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_6268",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "兵庫",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Dental_Lead_2298",
+        "issue": "Dental compliance/reporting burden",
+        "city": "兵庫",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_3973",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "兵庫",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "広島",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Construction_広島_0247",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=広島+Construction",
+        "issue": "【Constructionの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Construction",
+        "city": "広島",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_FireSafety_Lead_1070",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "広島",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "香川",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_LocalGov_香川_0247",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=香川+LocalGov",
+        "issue": "【LocalGovの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "LocalGov",
+        "city": "香川",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Construction_Lead_1536",
+        "issue": "Construction compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_9445",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_9636",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_6302",
+        "issue": "Medical compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AgedCare_Lead_6908",
+        "issue": "AgedCare compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "AgedCare",
+        "type": "sniper"
+      },
+      {
+        "username": "New_LocalGov_Lead_4655",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AgedCare_Lead_5622",
+        "issue": "AgedCare compliance/reporting burden",
+        "city": "香川",
+        "lang": "ja",
+        "sector": "AgedCare",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "和歌山",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_ProfService_和歌山_0247",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=和歌山+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "和歌山",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Maritime_Lead_5739",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "和歌山",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_5995",
+        "issue": "Construction compliance/reporting burden",
+        "city": "和歌山",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "富山",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Medical_富山_0247",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=富山+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "富山",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_Construction_富山_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=富山+Construction",
+        "issue": "【Constructionの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Construction",
+        "city": "富山",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_IndWaste_Lead_3429",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_4968",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Maritime_Lead_7268",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Dental_Lead_1749",
+        "issue": "Dental compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_9621",
+        "issue": "Medical compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_5712",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_4569",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "富山",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "岐阜",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Nursing_岐阜_0931",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=岐阜+Nursing",
+        "issue": "【Nursingの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Nursing",
+        "city": "岐阜",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_Nursing_岐阜_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=岐阜+Nursing",
+        "issue": "【Nursingの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Nursing",
+        "city": "岐阜",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_CSP_Lead_7608",
+        "issue": "CSP compliance/reporting burden",
+        "city": "岐阜",
+        "lang": "ja",
+        "sector": "CSP",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_5287",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "岐阜",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FoodSafety_Lead_1525",
+        "issue": "FoodSafety compliance/reporting burden",
+        "city": "岐阜",
+        "lang": "ja",
+        "sector": "FoodSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_6847",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "岐阜",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "埼玉",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Construction_埼玉_0931",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=埼玉+Construction",
+        "issue": "【Constructionの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Construction",
+        "city": "埼玉",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_FireSafety_Lead_8679",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "埼玉",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_8728",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "埼玉",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "滋賀",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_LocalGov_滋賀_0931",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=滋賀+LocalGov",
+        "issue": "【LocalGovの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "LocalGov",
+        "city": "滋賀",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_ProfService_Lead_2861",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "滋賀",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_9886",
+        "issue": "Medical compliance/reporting burden",
+        "city": "滋賀",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_6092",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "滋賀",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_3539",
+        "issue": "Medical compliance/reporting burden",
+        "city": "滋賀",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "静岡",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_ProfService_静岡_0931",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=静岡+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "静岡",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Maritime_Lead_5559",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "静岡",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_6998",
+        "issue": "Medical compliance/reporting burden",
+        "city": "静岡",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "徳島",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Medical_徳島_0931",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=徳島+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "徳島",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_Medical_徳島_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=徳島+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "徳島",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_LocalGov_Lead_1756",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "徳島",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_9756",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "徳島",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_4459",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "徳島",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "愛媛",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Medical_愛媛_1615",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=愛媛+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "愛媛",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_LocalGov_愛媛_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=愛媛+LocalGov",
+        "issue": "【LocalGovの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "LocalGov",
+        "city": "愛媛",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_ProfService_愛媛_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=愛媛+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "愛媛",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Dental_Lead_4710",
+        "issue": "Dental compliance/reporting burden",
+        "city": "愛媛",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "長崎",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_ProfService_長崎_1615",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=長崎+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "長崎",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_IndWaste_長崎_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=長崎+IndWaste",
+        "issue": "【IndWasteの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "IndWaste",
+        "city": "長崎",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Medical_Lead_6919",
+        "issue": "Medical compliance/reporting burden",
+        "city": "長崎",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_6762",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "長崎",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "山口",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Construction_山口_1615",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=山口+Construction",
+        "issue": "【Constructionの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Construction",
+        "city": "山口",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_FireSafety_Lead_3003",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "山口",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "熊本",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Nursing_熊本_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=熊本+Nursing",
+        "issue": "【Nursingの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Nursing",
+        "city": "熊本",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Maritime_Lead_4427",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "熊本",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_6201",
+        "issue": "Construction compliance/reporting burden",
+        "city": "熊本",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_CSP_Lead_1358",
+        "issue": "CSP compliance/reporting burden",
+        "city": "熊本",
+        "lang": "ja",
+        "sector": "CSP",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "秋田",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Medical_秋田_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=秋田+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "秋田",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Nursing_Lead_6511",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "秋田",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_LocalGov_Lead_6863",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "秋田",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_LocalGov_Lead_5730",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "秋田",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_3149",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "秋田",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_5502",
+        "issue": "Construction compliance/reporting burden",
+        "city": "秋田",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "大阪",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_ProfService_大阪_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=大阪+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "大阪",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_FireSafety_Lead_3886",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "大阪",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_2621",
+        "issue": "Construction compliance/reporting burden",
+        "city": "大阪",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AML_Prep_Lead_2833",
+        "issue": "AML_Prep compliance/reporting burden",
+        "city": "大阪",
+        "lang": "ja",
+        "sector": "AML_Prep",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "鹿児島",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Construction_鹿児島_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=鹿児島+Construction",
+        "issue": "【Constructionの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Construction",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Maritime_Lead_3181",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_7456",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_8230",
+        "issue": "Construction compliance/reporting burden",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_CSP_Lead_6352",
+        "issue": "CSP compliance/reporting burden",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sector": "CSP",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AML_Prep_Lead_1234",
+        "issue": "AML_Prep compliance/reporting burden",
+        "city": "鹿児島",
+        "lang": "ja",
+        "sector": "AML_Prep",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "鳥取",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_IndWaste_鳥取_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=鳥取+IndWaste",
+        "issue": "【IndWasteの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "IndWaste",
+        "city": "鳥取",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_IndWaste_Lead_2923",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "鳥取",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_7808",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "鳥取",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "山梨",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_VisaCompliance_山梨_2301",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=山梨+VisaCompliance",
+        "issue": "【VisaComplianceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "VisaCompliance",
+        "city": "山梨",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_VisaCompliance_Lead_5653",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "山梨",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_3479",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "山梨",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_8606",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "山梨",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_9034",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "山梨",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "宮城",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Medical_宮城_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=宮城+Medical",
+        "issue": "【Medicalの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Medical",
+        "city": "宮城",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Nursing_Lead_5969",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "宮城",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "北海道",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_ProfService_北海道_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=北海道+ProfService",
+        "issue": "【ProfServiceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "ProfService",
+        "city": "北海道",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Dental_Lead_1585",
+        "issue": "Dental compliance/reporting burden",
+        "city": "北海道",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "栃木",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_IndWaste_栃木_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=栃木+IndWaste",
+        "issue": "【IndWasteの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "IndWaste",
+        "city": "栃木",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_ProfService_Lead_8039",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "栃木",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_9571",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "栃木",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "京都",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_FireSafety_京都_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=京都+FireSafety",
+        "issue": "【FireSafetyの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "FireSafety",
+        "city": "京都",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Maritime_Lead_3586",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "京都",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_8031",
+        "issue": "Construction compliance/reporting burden",
+        "city": "京都",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "青森",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_VisaCompliance_青森_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=青森+VisaCompliance",
+        "issue": "【VisaComplianceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "VisaCompliance",
+        "city": "青森",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_LocalGov_Lead_1869",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "青森",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_2369",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "青森",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_9897",
+        "issue": "Medical compliance/reporting burden",
+        "city": "青森",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_9709",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "青森",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "三重",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_Maritime_三重_2409",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=三重+Maritime",
+        "issue": "【Maritimeの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Maritime",
+        "city": "三重",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_Nursing_Lead_7927",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "三重",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_9290",
+        "issue": "Medical compliance/reporting burden",
+        "city": "三重",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_3918",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "三重",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "宮崎",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_FireSafety_宮崎_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=宮崎+FireSafety",
+        "issue": "【FireSafetyの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "FireSafety",
+        "city": "宮崎",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_FireSafety_Lead_7612",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "宮崎",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_2394",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "宮崎",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_3903",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "宮崎",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_9227",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "宮崎",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "新潟",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "Target_VisaCompliance_新潟_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=新潟+VisaCompliance",
+        "issue": "【VisaComplianceの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "VisaCompliance",
+        "city": "新潟",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "Target_Maritime_新潟_2527",
+        "platform": "Sniper v2",
+        "url": "https://www.google.com/search?q=新潟+Maritime",
+        "issue": "【Maritimeの痛み検知】2026年問題に伴う業務過多シグナル",
+        "sector": "Maritime",
+        "city": "新潟",
+        "lang": "ja",
+        "sniper_signal": {
+          "hiring_pressure": "Critical (複数求人サイトで急募中)",
+          "meo_gap": "Response rate < 10% (高負荷により放置)",
+          "regulatory_risk": "2026 Compliance High Alert"
+        },
+        "priority_score": 95
+      },
+      {
+        "username": "New_LocalGov_Lead_3063",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "新潟",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_4335",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "新潟",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_LocalGov_Lead_3581",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "新潟",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "群馬",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_IndWaste_Lead_4311",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "群馬",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Maritime_Lead_9166",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "群馬",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AgedCare_Lead_5565",
+        "issue": "AgedCare compliance/reporting burden",
+        "city": "群馬",
+        "lang": "ja",
+        "sector": "AgedCare",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "東京",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_VisaCompliance_Lead_9540",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "東京",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_6722",
+        "issue": "Construction compliance/reporting burden",
+        "city": "東京",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "千葉",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Medical_Lead_9217",
+        "issue": "Medical compliance/reporting burden",
+        "city": "千葉",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Construction_Lead_9062",
+        "issue": "Construction compliance/reporting burden",
+        "city": "千葉",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_LocalGov_Lead_9458",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "千葉",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Childcare_Lead_3568",
+        "issue": "Childcare compliance/reporting burden",
+        "city": "千葉",
+        "lang": "ja",
+        "sector": "Childcare",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "岡山",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_IndWaste_Lead_3205",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "岡山",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_5303",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "岡山",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "佐賀",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Medical_Lead_3887",
+        "issue": "Medical compliance/reporting burden",
+        "city": "佐賀",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Nursing_Lead_6959",
+        "issue": "Nursing compliance/reporting burden",
+        "city": "佐賀",
+        "lang": "ja",
+        "sector": "Nursing",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Childcare_Lead_5743",
+        "issue": "Childcare compliance/reporting burden",
+        "city": "佐賀",
+        "lang": "ja",
+        "sector": "Childcare",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Dental_Lead_2128",
+        "issue": "Dental compliance/reporting burden",
+        "city": "佐賀",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "奈良",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_LocalGov_Lead_2157",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "奈良",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_8713",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "奈良",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "茨城",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Maritime_Lead_2498",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "茨城",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_3068",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "茨城",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_6753",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "茨城",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_4103",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "茨城",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "島根",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_LocalGov_Lead_7503",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "島根",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_ProfService_Lead_5421",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "島根",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "福島",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Construction_Lead_1174",
+        "issue": "Construction compliance/reporting burden",
+        "city": "福島",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_1731",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "福島",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Dental_Lead_8624",
+        "issue": "Dental compliance/reporting burden",
+        "city": "福島",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FoodSafety_Lead_6632",
+        "issue": "FoodSafety compliance/reporting burden",
+        "city": "福島",
+        "lang": "ja",
+        "sector": "FoodSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "石川",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Dental_Lead_2120",
+        "issue": "Dental compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_8947",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Dental_Lead_8807",
+        "issue": "Dental compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "Dental",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Maritime_Lead_6800",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_CSP_Lead_6226",
+        "issue": "CSP compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "CSP",
+        "type": "sniper"
+      },
+      {
+        "username": "New_IndWaste_Lead_7312",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      },
+      {
+        "username": "New_FireSafety_Lead_7676",
+        "issue": "FireSafety compliance/reporting burden",
+        "city": "石川",
+        "lang": "ja",
+        "sector": "FireSafety",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "高知",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_ProfService_Lead_3886",
+        "issue": "ProfService compliance/reporting burden",
+        "city": "高知",
+        "lang": "ja",
+        "sector": "ProfService",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "福井",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_VisaCompliance_Lead_9969",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "福井",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "愛知",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Medical_Lead_6071",
+        "issue": "Medical compliance/reporting burden",
+        "city": "愛知",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      },
+      {
+        "username": "New_VisaCompliance_Lead_2643",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "愛知",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Maritime_Lead_8061",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "愛知",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      },
+      {
+        "username": "New_AgedCare_Lead_8918",
+        "issue": "AgedCare compliance/reporting burden",
+        "city": "愛知",
+        "lang": "ja",
+        "sector": "AgedCare",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "岩手",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_LocalGov_Lead_1732",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "岩手",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Medical_Lead_4532",
+        "issue": "Medical compliance/reporting burden",
+        "city": "岩手",
+        "lang": "ja",
+        "sector": "Medical",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "神奈川",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_VisaCompliance_Lead_1439",
+        "issue": "VisaCompliance compliance/reporting burden",
+        "city": "神奈川",
+        "lang": "ja",
+        "sector": "VisaCompliance",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "山形",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_LocalGov_Lead_7943",
+        "issue": "LocalGov compliance/reporting burden",
+        "city": "山形",
+        "lang": "ja",
+        "sector": "LocalGov",
+        "type": "sniper"
+      },
+      {
+        "username": "New_Maritime_Lead_7524",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "山形",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "福岡",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Construction_Lead_2723",
+        "issue": "Construction compliance/reporting burden",
+        "city": "福岡",
+        "lang": "ja",
+        "sector": "Construction",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "沖縄",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_IndWaste_Lead_3656",
+        "issue": "IndWaste compliance/reporting burden",
+        "city": "沖縄",
+        "lang": "ja",
+        "sector": "IndWaste",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "長野",
+    "sector": "Auto Discovery",
+    "targets": [
+      {
+        "username": "New_Maritime_Lead_2387",
+        "issue": "Maritime compliance/reporting burden",
+        "city": "長野",
+        "lang": "ja",
+        "sector": "Maritime",
+        "type": "sniper"
+      }
+    ]
+  },
+  {
+    "city": "大分",
+    "sector": "Auto Discovery",
+    "targets": []
+  }
+]
