@@ -3213,42 +3213,5 @@
         "status": "PENDING",
         "timestamp": "2026-03-21T15:51:57.006608",
         "executed_at": null
-    },
-    {
-        "task_id": "TASK_20260321_165936_SYSTE",
-        "client_id": "SYSTEM_SCOUT",
-        "sector": "MARKET_RESEARCH",
-        "action_type": "MarketExpansion",
-        "content": "【新市場提案】CareGiverVisaセクターへの緊急参入プロトコル\n概要: 特定技能（介護）の報告義務簡素化への対応遅れ\n期待収益: High (月額サブスクリプション + 初回セットアップ費用)",
-        "metadata": {},
-        "consensus": {
-            "summary": "REJECTED",
-            "opinions": [
-                {
-                    "expert": "Legal Counsel",
-                    "status": "REJECTED",
-                    "message": "【鉄壁ガードレール：強制リジェクト】以下の法的リスク/不備を検知しました:\n\n提案内容に関する法的根拠や具体的な規制の確認が不十分であり、特定技能（介護）に関する報告義務の簡素化に関する法的事実が確認できないため。"
-                },
-                {
-                    "expert": "Brand Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入提案は、ビジネスの成長に寄与する可能性があり、期待収益も高いため。"
-                },
-                {
-                    "expert": "Operations Expert",
-                    "status": "APPROVED",
-                    "message": "新市場への参入は高い収益が期待でき、特定技能（介護）の報告義務簡素化に対応することで競争優位性を確保できるため、実用的な提案と判断しました。"
-                }
-            ],
-            "fact_checks": {
-                "verified": true,
-                "claims_detected": [],
-                "violations": [],
-                "risk_level": "NORMAL"
-            }
-        },
-        "status": "PENDING",
-        "timestamp": "2026-03-21T16:59:36.936947",
-        "executed_at": null
     }
 ]
