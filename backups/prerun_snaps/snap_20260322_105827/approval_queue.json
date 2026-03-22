@@ -3583,42 +3583,5 @@
         "status": "PENDING",
         "timestamp": "2026-03-22T09:05:04.623391",
         "executed_at": null
-    },
-    {
-        "task_id": "TASK_20260322_105834_SYSTE",
-        "client_id": "SYSTEM_SCOUT",
-        "sector": "MARKET_RESEARCH",
-        "action_type": "MarketExpansion",
-        "content": "【新市場提案】TruckLogisticsセクターへの緊急参入プロトコル\n概要: CLO（物流統括管理者）の選任義務化による中堅運送会社の事務負担増\n期待収益: High (月額サブスクリプション + 初回セットアップ費用)",
-        "metadata": {},
-        "consensus": {
-            "summary": "REJECTED",
-            "opinions": [
-                {
-                    "expert": "Legal Counsel",
-                    "status": "REJECTED",
-                    "message": "【鉄壁ガードレール：強制リジェクト】以下の法的リスク/不備を検知しました:\n\n提案内容に具体的な法的根拠や裏取りデータが不足しているため、法的な妥当性を確認できない。"
-                },
-                {
-                    "expert": "Brand Expert",
-                    "status": "REJECTED",
-                    "message": "提案内容において、事務負担の増加が強調されており、運送会社に対するネガティブな影響が示唆されています。よりポジティブな表現に改善する必要があります。"
-                },
-                {
-                    "expert": "Operations Expert",
-                    "status": "REJECTED",
-                    "message": "新市場への参入は高い期待収益を見込めるが、CLOの選任義務化による事務負担増が中堅運送会社にとって大きな障壁となる可能性があり、実行可能性が低いと判断されるため。"
-                }
-            ],
-            "fact_checks": {
-                "verified": true,
-                "claims_detected": [],
-                "violations": [],
-                "risk_level": "NORMAL"
-            }
-        },
-        "status": "PENDING",
-        "timestamp": "2026-03-22T10:58:34.455998",
-        "executed_at": null
     }
 ]
