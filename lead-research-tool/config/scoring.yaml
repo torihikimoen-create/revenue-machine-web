@@ -1,0 +1,12 @@
+industry_weights:
+  産廃業: 1.2
+  建設業: 1.1
+
+signals:
+  no_digital_manifest: 30
+  no_greenfile_system: 30
+  small_company: 20
+  has_contact_form: 20
+
+threshold:
+  outreach_ready: 70
