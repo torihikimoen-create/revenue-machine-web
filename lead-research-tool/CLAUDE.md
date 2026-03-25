@@ -81,3 +81,28 @@ ITEMISATION: enabled
 - TEL（携帯）：070-9001-6242 ※営業文章はこちらを使用
 - TEL（固定）：0955-73-1130 ※コンビニ払い審査用のみ
 - ホームページ：https://torihikimoen-create.github.io/revenue-machine-web/
+
+## フォルダ構成・インフラ情報
+
+### メインプロジェクト `C:\Users\himic\Desktop\revenue-machine\`
+- `form_filler.py`      # 営業フォーム自動送信
+- `sent_list.csv`       # 送信履歴
+- `followup_reminder.py`# フォローアップ管理
+- `list_collector.py`   # 営業リスト自動収集
+- `test_bot.py`         # 自動テスト
+- `line_bot.py`         # 産廃ボット
+- `green_bot.py`        # 建設ボット
+- `.env`                # 環境変数
+
+### lead-research-tool `C:\Users\himic\.gemini\antigravity\scratch\business-automation\lead-research-tool\`
+
+### Renderデプロイ
+- 産廃ボット：https://aether-sanpai-bot.onrender.com
+- 建設ボット：https://aether-green-bot.onrender.com
+
+### LINE
+- 産廃：@315yriby
+- 建設：@591yxdrx
+
+### GitHub
+- https://github.com/torihikimoen-create/revenue-machine-web
