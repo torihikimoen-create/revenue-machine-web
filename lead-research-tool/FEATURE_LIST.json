@@ -1,0 +1,54 @@
+{
+  "project": "AETHERCORE lead-research-tool",
+  "last_updated": "2026-03-25",
+  "features": [
+    {
+      "id": "F001",
+      "name": "リード収集（SerpAPI / seed-generator）",
+      "status": "pass",
+      "notes": "SerpAPIキー未設定時はseed-generatorで動作。実データ収集にはSERPAPI_KEY要設定。"
+    },
+    {
+      "id": "F002",
+      "name": "産廃・建設業スコアリング",
+      "status": "pass",
+      "notes": "4シグナル・100点満点。閾値70点。scoring.yaml参照。"
+    },
+    {
+      "id": "F003",
+      "name": "営業ドラフト生成（産廃・建設業別テンプレート）",
+      "status": "pass",
+      "notes": "api/main.py の SANPAI_BODY / KENSETSU_BODY を使用。"
+    },
+    {
+      "id": "F004",
+      "name": "メールアドレス自動補完（スクレイピング）",
+      "status": "pass",
+      "notes": "/enrich-emails エンドポイントで実装済み。"
+    },
+    {
+      "id": "F005",
+      "name": "CSVエクスポート",
+      "status": "pass",
+      "notes": "/leads/export.csv エンドポイント。ステータス・スコアフィルタ対応。"
+    },
+    {
+      "id": "F006",
+      "name": "営業ステータス管理（new/sent/replied）",
+      "status": "pass",
+      "notes": "webapp からステータス更新可能。"
+    },
+    {
+      "id": "F007",
+      "name": "webapp 産廃業・建設業セレクトボックス",
+      "status": "pass",
+      "notes": "page.tsx 更新済み。"
+    },
+    {
+      "id": "F008",
+      "name": "sent_list.csvとの統合",
+      "status": "pending",
+      "notes": "revenue-machine/sent_list.csv との重複排除。T006参照。"
+    }
+  ]
+}
