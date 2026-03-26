@@ -28,6 +28,7 @@
 
     <main>
         <section id="hero">
+            <canvas id="particle-canvas"></canvas>
             <div class="hero-content">
                 <h1 class="glitch-text">現場をラクに。<br>経営を盤石に。</h1>
                 <p class="subtitle">24時間365日、私たちのチームとAIが連携し、現場の「事務・営業・実務」を最短距離で支えます。あなたは本来の意思決定に、すべての情熱を注げるようになります。</p>
@@ -144,5 +145,91 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+(function() {
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: null, y: null };
+  const COUNT = window.innerWidth < 768 ? 40 : 70;
+  const MAX_DIST = 140;
+  const COLOR = '0, 220, 220';
+
+  function resize() {
+    canvas.width  = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  document.getElementById('hero').addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  document.getElementById('hero').addEventListener('mouseleave', () => {
+    mouse.x = null; mouse.y = null;
+  });
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      r: Math.random() * 2 + 1
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => {
+      if (mouse.x !== null) {
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 180) {
+          p.vx += dx / dist * 0.03;
+          p.vy += dy / dist * 0.03;
+        }
+      }
+
+      const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
+      if (speed > 1.5) { p.vx *= 1.5/speed; p.vy *= 1.5/speed; }
+
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${COLOR}, 0.6)`;
+      ctx.fill();
+    });
+
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i+1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < MAX_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(${COLOR}, ${(1 - dist/MAX_DIST) * 0.25})`;
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+    </script>
 </body>
 </html>
