@@ -151,40 +151,41 @@
   const ctx = canvas.getContext('2d');
   let particles = [];
   let mouse = { x: null, y: null };
-  const COUNT = window.innerWidth < 768 ? 40 : 70;
-  const MAX_DIST = 140;
-  const COLOR = '0, 220, 220';
 
   function resize() {
-    const hero = document.getElementById('hero');
-    const rect = hero.getBoundingClientRect();
-    canvas.width  = rect.width;
-    canvas.height = rect.height;
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
   }
-  window.addEventListener('resize', resize);
 
-  document.getElementById('hero').addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
+  window.addEventListener('resize', resize);
+  window.addEventListener('mousemove', e => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
   });
-  document.getElementById('hero').addEventListener('mouseleave', () => {
+  window.addEventListener('mouseleave', () => {
     mouse.x = null; mouse.y = null;
   });
 
-  for (let i = 0; i < COUNT; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      r: Math.random() * 2 + 1
-    });
+  function init() {
+    resize();
+    const COUNT = window.innerWidth < 768 ? 40 : 70;
+    particles = [];
+    for (let i = 0; i < COUNT; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        r: Math.random() * 2 + 1
+      });
+    }
   }
+
+  const MAX_DIST = 140;
+  const COLOR = '0, 220, 220';
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     particles.forEach(p => {
       if (mouse.x !== null) {
         const dx = mouse.x - p.x;
@@ -195,22 +196,16 @@
           p.vy += dy / dist * 0.03;
         }
       }
-
       const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
       if (speed > 1.5) { p.vx *= 1.5/speed; p.vy *= 1.5/speed; }
-
-      p.x += p.vx;
-      p.y += p.vy;
-
+      p.x += p.vx; p.y += p.vy;
       if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
       if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${COLOR}, 0.6)`;
       ctx.fill();
     });
-
     for (let i = 0; i < particles.length; i++) {
       for (let j = i+1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -226,13 +221,11 @@
         }
       }
     }
-
     requestAnimationFrame(draw);
   }
-  window.addEventListener('load', () => {
-    resize();
-    draw();
-  });
+
+  init();
+  draw();
 })();
     </script>
 </body>
