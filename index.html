@@ -156,8 +156,9 @@
   const COLOR = '0, 220, 220';
 
   function resize() {
-    canvas.width  = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    const hero = document.getElementById('hero');
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
   }
   resize();
   window.addEventListener('resize', resize);
