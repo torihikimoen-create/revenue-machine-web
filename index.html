@@ -157,10 +157,10 @@
 
   function resize() {
     const hero = document.getElementById('hero');
-    canvas.width  = hero.offsetWidth;
-    canvas.height = hero.offsetHeight;
+    const rect = hero.getBoundingClientRect();
+    canvas.width  = rect.width;
+    canvas.height = rect.height;
   }
-  resize();
   window.addEventListener('resize', resize);
 
   document.getElementById('hero').addEventListener('mousemove', e => {
@@ -229,7 +229,10 @@
 
     requestAnimationFrame(draw);
   }
-  draw();
+  window.addEventListener('load', () => {
+    resize();
+    draw();
+  });
 })();
     </script>
 </body>
