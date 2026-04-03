@@ -1,232 +1,132 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETHER CORE | Autonomous Business Engine</title>
-    <link rel="stylesheet" href="style.css">
+    <title>SakuraSoulReading — Flower Compatibility Reading</title>
+    <meta name="description" content="Discover the guardian flower of your connection. Free numerology-based compatibility reading by SakuraSoulReading.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="assets/branding/icon.png?v=3">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-blur"></div>
-    
+
+    <canvas id="bg-canvas"></canvas>
+
     <header>
+        <div class="logo">
+            <span class="logo-sakura">🌸</span>
+            <span class="logo-text">SakuraSoul<em>Reading</em></span>
+        </div>
         <nav>
-            <div class="logo">
-                <a href="index.html" class="logo-text">AETHER <span>CORE</span></a>
-            </div>
-            <ul>
-                <li><a href="#features">支援エンジン</a></li>
-                <li><a href="#pricing">料金プラン</a></li>
-                <li><a href="#contact">ご相談</a></li>
-            </ul>
+            <a href="#check">Free Reading</a>
+            <a href="https://www.etsy.com/shop/SakuraSoulReading" target="_blank" class="nav-etsy">Full Reading ✦</a>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <canvas id="particle-canvas"></canvas>
-            <div class="hero-content">
-                <h1 class="glitch-text">現場をラクに。<br>経営を盤石に。</h1>
-                <p class="subtitle">24時間365日、私たちのチームとAIが連携し、現場の「事務・営業・実務」を最短距離で支えます。あなたは本来の意思決定に、すべての情熱を注げるようになります。</p>
-                <div class="cta-buttons">
-                    <a href="#pricing" class="btn primary trial-trigger">LINEで無料診断を試す</a>
-                    <a href="#features" class="btn secondary">支援の内容を見る</a>
-                </div>
-            </div>
-        </section>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">✦ &nbsp; numerology &nbsp;×&nbsp; guardian flowers &nbsp; ✦</p>
+            <h1>What does the universe<br><em>say about your love?</em></h1>
+            <p class="hero-sub">Enter two birthdays. Discover the flower that guards your connection — and the message it carries for you both.</p>
+            <a href="#check" class="btn-primary">Reveal Your Flower ↓</a>
+        </div>
+    </section>
 
-        <section id="features">
-            <h2 class="section-title">3つの伴走エンジン</h2>
-            <div class="grid">
-                <div class="card glass">
-                    <div class="icon">⭐</div>
-                    <h3>地域・マップ守護</h3>
-                    <p>地域密着の視点で、お店の評判と信頼を大切に育みます。日英米の文化に合わせた丁寧な対応を私たちが支援します。</p>
-                </div>
-                <div class="card glass">
-                    <div class="icon">📂</div>
-                    <h3>ナレッジ・整理・コンシェルジュ</h3>
-                    <p>膨大なデータをAIの力で整理・抽出し、皆様の知恵を資産として守ります。日々の事務作業を劇的に軽やかにします。</p>
-                </div>
-                <div class="card glass">
-                    <div class="icon">💰</div>
-                    <h3>B2B自律営業ナビ</h3>
-                    <p>地域・業種別の規制を遵守したAIが、誠実な提案書作成をサポート。現場の熱意を適切な相手へ確実に届けます。</p>
-                </div>
-            </div>
-        </section>
+    <!-- FREE CHECK -->
+    <section id="check">
+        <div class="section-label">✦ Free Compatibility Reading ✦</div>
+        <h2>Find Your Connection Flower</h2>
+        <p class="section-sub">Every bond has a guardian flower. Enter two birthdays to find yours.</p>
 
-        <section id="why-subscription">
-            <div class="container glass">
-                <h2 class="section-title">なぜ「継続的なAI支援」が必要なのか</h2>
-                <div class="value-proposition">
-                    <div class="prop-item">
-                        <h4>1. 実行の効率化（分かち合い）</h4>
-                        <p>高度な「ツール」を持っていても、使う時間がなければ意味がありません。私たちのチームとAIが、皆様の不在時も安定して実務の基盤を支え続けます。</p>
-                    </div>
-                    <div class="prop-item">
-                        <h4>2. プロンプト不要の運用</h4>
-                        <p>専門的な命令の知識は不要です。業界ごとの最適解を学習済みのAIを活用し、私たちが一貫したクオリティで成果をお届けします。</p>
-                    </div>
-                    <div class="prop-item">
-                        <h4>3. 継続的な信頼の維持</h4>
-                        <p>一度きりの設定では信頼は守れません。AIを駆使した継続的な「店番」と対応により、地域での安定した評価を長期的に守り抜きます。</p>
-                    </div>
+        <div class="check-card">
+            <div class="check-form">
+                <div class="person-block">
+                    <div class="person-label">🌸 Person One</div>
+                    <input type="text" id="name1" placeholder="Name (optional)" autocomplete="off">
+                    <input type="date" id="bday1" required>
+                </div>
+                <div class="connector">×</div>
+                <div class="person-block">
+                    <div class="person-label">🌸 Person Two</div>
+                    <input type="text" id="name2" placeholder="Name (optional)" autocomplete="off">
+                    <input type="date" id="bday2" required>
                 </div>
             </div>
-        </section>
+            <button id="reveal-btn" onclick="calculate()">✦ Reveal Your Flower ✦</button>
+            <p class="form-note">Your information is never stored or shared.</p>
+        </div>
+    </section>
 
-        <section id="pricing">
-            <h2 class="section-title">ご利用プラン</h2>
-            <div class="grid single-plan">
-                <div class="card glass highlight">
-                    <div class="card-badge">一番人気</div>
-                    <h3>スタンダード運用</h3>
-                    <div class="price">¥14,800<span> / 月 (税込)</span></div>
-                    <ul>
-                        <li><span class="check">✔</span> 業界特化リードの毎日自動発掘</li>
-                        <li><span class="check">✔</span> AIによる週次レポート生成</li>
-                        <li><span class="check">✔</span> 写真・書類のスマホ自動解析フロー</li>
-                        <li><span class="check">✔</span> 写真1枚で廃棄物品目を即判定</li>
-                        <li><span class="check">✔</span> 優先メールサポート</li>
-                    </ul>
-                    <div style="display:flex; gap:10px; margin-top:15px;">
-                        <a href="https://line.me/R/ti/p/@315yriby" target="_blank" rel="noopener" class="btn primary" style="flex:1; text-align:center;">産廃業の方はこちら</a>
-                        <a href="https://line.me/R/ti/p/@591yxdrx" target="_blank" rel="noopener" class="btn primary" style="flex:1; text-align:center;">建設業の方はこちら</a>
-                    </div>
+    <!-- RESULTS (hidden until calculated) -->
+    <section id="results" class="hidden">
+        <div class="results-inner">
+            <p class="results-eyebrow">Your Connection Flower</p>
+            <div class="flower-emoji" id="res-emoji">🌸</div>
+            <h2 id="res-flower-name">Cherry Blossom</h2>
+            <p class="flower-keyword" id="res-keyword">Perfect Harmony</p>
+
+            <div class="score-bar-wrap">
+                <div class="score-label">Compatibility</div>
+                <div class="score-bar">
+                    <div class="score-fill" id="score-fill"></div>
+                </div>
+                <div class="score-pct" id="score-pct">0%</div>
+            </div>
+
+            <div class="numbers-row">
+                <div class="number-chip">
+                    <span id="res-name1">You</span>
+                    <strong id="res-num1">—</strong>
+                </div>
+                <div class="number-chip">
+                    <span id="res-name2">Partner</span>
+                    <strong id="res-num2">—</strong>
                 </div>
             </div>
-            <p style="text-align: center; margin-top: 20px; font-size: 0.85rem; opacity: 0.75; line-height: 1.8;">
-                ※月額プランのお支払いはクレジットカードに対応しています。<br>
-                　銀行振込をご希望の場合は、請求書を発行いたしますのでメールにてお問い合わせください。<br><br>
-                ※産廃・建設業以外の業界向けカスタム構築も承ります。お気軽にお問い合わせください。
-            </p>
-        </section>
 
-        <section id="contact">
-            <div class="container glass" style="max-width:700px; margin:0 auto; padding:40px;">
-                <h2 class="section-title">お問い合わせ</h2>
-                <p style="text-align:center; margin-bottom:30px; opacity:0.85;">ご不明な点・導入のご相談はお気軽にどうぞ。</p>
-                <div style="text-align:center; line-height:2.2; font-size:1rem;">
-                    <p>📧 メール：<a href="mailto:torihikimoen@gmail.com" style="color:var(--primary);">torihikimoen@gmail.com</a></p>
-                    <p>📞 TEL（固定）：<a href="tel:0955731130" style="color:var(--primary);">0955-73-1130</a></p>
-                    <p>📱 TEL（携帯）：<a href="tel:07090016242" style="color:var(--primary);">070-9001-6242</a></p>
-                    <p style="margin-top:20px; font-size:0.85rem; opacity:0.7;">受付時間：平日 9:00〜18:00（土日祝はメール対応）</p>
-                </div>
-            </div>
-        </section>
+            <p class="res-message" id="res-message"></p>
 
-        <section id="office">
-            <h2 class="section-title">事業所</h2>
-            <div class="container" style="max-width:900px; margin:0 auto; text-align:center;">
-                <p style="margin-bottom:32px; font-size:1rem; opacity:0.85;">📍 佐賀県唐津市鏡1429-2 シェランデSAI203</p>
-                <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
-                    <img src="assets/office/office-01.jpg" alt="事業所外観1" style="width:48%; max-width:420px; border-radius:12px; object-fit:cover; aspect-ratio:4/3;">
-                    <img src="assets/office/office-02.jpg" alt="事業所外観2" style="width:48%; max-width:420px; border-radius:12px; object-fit:cover; aspect-ratio:4/3;">
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <div class="logo-text small">AETHER <span>CORE</span></div>
-                <p>© 2026 AETHER CORE. All rights reserved.</p>
-            </div>
-            <div class="footer-section">
-                <p><a href="terms.html">利用規約</a> | <a href="privacy.html">プライバシーポリシー</a> | <a href="tokushoho.html">特定商取引法に基づく表記</a></p>
+            <div class="res-cta">
+                <p class="res-cta-text">Want to go deeper?</p>
+                <a href="https://www.etsy.com/shop/SakuraSoulReading" target="_blank" class="btn-primary">
+                    Get Your Full Reading on Etsy ✦
+                </a>
+                <p class="res-cta-sub">Personalized PDF · Delivered within 24 hours</p>
             </div>
         </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text">
+                <div class="section-label">✦ About ✦</div>
+                <h2>The Language<br><em>of Flowers</em></h2>
+                <p>For centuries, flowers have carried messages that words cannot hold. SakuraSoulReading blends the ancient wisdom of numerology with the symbolic power of guardian flowers — to reveal the invisible thread that connects two people.</p>
+                <p>Every full reading is handcrafted with care, delivered as a beautifully designed PDF that you can return to again and again.</p>
+                <a href="https://www.etsy.com/shop/SakuraSoulReading" target="_blank" class="btn-secondary">Visit the Shop ✦</a>
+            </div>
+            <div class="about-flowers">
+                <div class="flower-card">🌸<span>Compatibility Reading</span></div>
+                <div class="flower-card">🪷<span>Guardian Flower PDF</span></div>
+                <div class="flower-card">🤍<span>Numerology Report</span></div>
+                <div class="flower-card">💐<span>Monthly Guidance</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">🌸 SakuraSoulReading</div>
+        <div class="footer-links">
+            <a href="https://www.etsy.com/shop/SakuraSoulReading" target="_blank">Etsy Shop</a>
+        </div>
+        <p class="footer-copy">© 2026 SakuraSoulReading. All readings are for entertainment purposes.</p>
     </footer>
 
     <script src="app.js"></script>
-    <script>
-(function() {
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-  let particles = [];
-  let mouse = { x: null, y: null };
-
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-
-  window.addEventListener('resize', resize);
-  window.addEventListener('mousemove', e => {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  });
-  window.addEventListener('mouseleave', () => {
-    mouse.x = null; mouse.y = null;
-  });
-
-  function init() {
-    resize();
-    const COUNT = window.innerWidth < 768 ? 40 : 70;
-    particles = [];
-    for (let i = 0; i < COUNT; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        r: Math.random() * 2 + 1
-      });
-    }
-  }
-
-  const MAX_DIST = 140;
-  const COLOR = '0, 220, 220';
-
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => {
-      if (mouse.x !== null) {
-        const dx = mouse.x - p.x;
-        const dy = mouse.y - p.y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < 180) {
-          p.vx += dx / dist * 0.03;
-          p.vy += dy / dist * 0.03;
-        }
-      }
-      const speed = Math.sqrt(p.vx*p.vx + p.vy*p.vy);
-      if (speed > 1.5) { p.vx *= 1.5/speed; p.vy *= 1.5/speed; }
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${COLOR}, 0.6)`;
-      ctx.fill();
-    });
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i+1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx*dx + dy*dy);
-        if (dist < MAX_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(${COLOR}, ${(1 - dist/MAX_DIST) * 0.25})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(draw);
-  }
-
-  init();
-  draw();
-})();
-    </script>
 </body>
 </html>
